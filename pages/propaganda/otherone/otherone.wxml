@@ -1,0 +1,7 @@
+
+   <view class='win3'>
+      <image class='youhui' src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
+      <image class='youhuia'  src='/image/youhui.png' mode='widthFix'></image>
+      <view class='help' bindtap="help">帮好友助力</view>
+      <button class='help' open-type="share">我也要分享</button>
+  </view>

@@ -1,0 +1,47 @@
+.vip{
+  width: 200rpx;
+  height:110rpx;
+  border: 1rpx solid #ccc;
+  margin-top: 30rpx;
+  line-height: 110rpx;
+  font-size: 30rpx;
+}
+.active{
+  border: 1rpx solid #0068C2
+}
+
+.price{
+  width: 70%;
+  text-align: center;
+  font-size: 33rpx
+}
+.year{
+  width: 30%;
+  text-align: center;
+  background: #ccc;
+  position: relative
+}
+.on{
+  background: rgba(0,104,194, 0.5)
+}
+.botton{
+  width: 80%;
+  height: 80rpx;
+  background: #0068C2;
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  margin-top: 400rpx
+}
+.borsj{
+    width: 0;
+    height: 0;
+    border-bottom: 20rpx solid #0068C2;
+    border-left: 60rpx solid transparent;
+    position: absolute;
+    bottom: 0rpx;
+    left: 0rpx
+}

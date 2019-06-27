@@ -1,0 +1,66 @@
+.win2{
+  width: 92%;
+  height: auto;
+  margin: auto;
+  box-shadow: 0rpx 0rpx 30rpx 5rpx rgb(235, 234, 234);
+  margin-top: 60rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx
+}
+.win2 .title{
+  line-height: 50rpx;
+  font-size: 32rpx
+}
+.win2 .bigimg{
+  width: 100%;
+  margin-top: 30rpx
+}
+.team{
+  width: 90%;
+  height: 120rpx;
+  margin: auto;
+  margin-top: 50rpx
+}
+.only{
+  width: 70rpx;
+  height: 70rpx;
+  
+  
+}
+.haveuser{
+  width: 70rpx;
+  height: 70rpx;
+}
+.haveuser image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%
+}
+.nouser{
+   width: 70rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+   border: 1px #333 dashed;
+   text-align: center;
+  line-height: 70rpx;
+  border-radius: 50%;
+}
+button{
+  width: 80%;
+  height: 80rpx;
+  margin: auto;
+  background: #FC302F;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 0px 120rpx
+}
+button image{
+  width:60rpx;
+  height: 60rpx;
+  margin-top: 10rpx
+}

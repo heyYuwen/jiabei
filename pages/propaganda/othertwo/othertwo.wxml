@@ -1,0 +1,18 @@
+
+   <view class='win2'>
+      <view class='title'>大奖快到手啦，</view>
+      <view class='title'>就差6个新朋友神助攻咯！</view>
+      <image class='bigimg' src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
+      <view class='team flex_be'>
+            <view wx:for="{{team}}" wx:key='ws' class='only'>
+                <view class='haveuser'>
+                    <image src='{{item.img}}'></image>
+                </view>
+            </view>
+            <view wx:for="{{7-team.length}}" wx:key='gga' class='nouser'>+</view>
+      </view>
+      <button open-type='share' class="flex_ar">
+         <image src="/image/wxhy.png"></image>
+         <view>邀请好友助力 ></view>
+      </button>
+   </view>

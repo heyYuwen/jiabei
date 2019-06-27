@@ -1,0 +1,22 @@
+<view class="usertop flex_be">
+    <view class='username'>
+      我的头像
+    </view>
+    <image src='/image/index/ABC.jpg' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+   <text>手机号码</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+   <text>昵称</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+   <text>性别</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+   <text>地区</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>

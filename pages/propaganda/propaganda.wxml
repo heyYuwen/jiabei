@@ -1,0 +1,27 @@
+<view>
+  <view class="shareimg">
+    <image src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
+  </view>
+  <view class='content'>
+  活动规则：如果成功分享给朋友，便可获得220元优惠券用来抵扣在加贝购买的任意课程，若不足7位，每成功分享一位好友获得10元抵扣券
+  一张。若被分享的好友成功分享给他人，每成功分享一次，则可得5元抵扣券，以上优惠券均可叠加使用
+  </view>
+  <view class='share' bindtap='toshare'>立即分享</view>
+   <view class='share' bindtap='tomy'>分享战况</view>
+  <view class='cover' wx:if='{{coverwin}}'></view>
+  <view class='shares' wx:if='{{coverwin}}'>
+      <view class='flex_ar'>
+          <button class='one' open-type='share'>
+            <image src='/image/wx.png' mode='widthFix'></image>
+            微信好友
+          </button>
+          <view class='one'>
+            <image src='/image/wxq.png' mode='widthFix'></image>
+            朋友圈
+          </view> 
+      </view>
+      <text bindtap='closewind'>取消</text>
+  </view>
+</view>
+
+

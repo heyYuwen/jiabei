@@ -1,0 +1,10 @@
+<view class="redbag flex_ar">
+   <view class='price'>
+     <view class='redprice'>￥220</view>
+     成功领取220元课程抵扣券
+   </view>
+   <view class='time'>
+     <view class='endtime'>6月19日即将到期</view>
+     <view class='use'>去使用</view>
+   </view>
+</view>

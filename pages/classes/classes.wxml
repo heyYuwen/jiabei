@@ -1,0 +1,20 @@
+<view class='containera'>
+  <view class='topnav'>
+    <scroll-view scroll-x style="height: 80rpx;" class='flex_sta scroll'>
+      <view class="navitem {{index==currentindex?'active':''}}"  wx:for="{{navlist}}" wx:key='ds' data-index='{{index}}' data-item='{{item}}' bindtap='navchange'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+    <view class="" wx:if="{{currentindex==0}}">
+        <scroll-view scroll-y style="height: auto;">
+            <view class="flex_clbe thecenter">
+                <view class='itemswiper' wx:for="{{6}}" wx:key='d'> 
+                    <image src='/image/index/fenlei_img_display@2x.png' mode='widthFix'></image>
+                    <view class='text'>
+                      <view>整体软装全能班7天</view>
+                      <text>2019/6-25-30</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>    
+</view>

@@ -1,0 +1,36 @@
+/**app.wxss**/
+.container {
+  height: auto;
+  width: 92%;
+  margin: auto;
+  box-sizing: border-box;
+  padding-top: 30rpx
+} 
+.containera{
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.flex_ar{
+  display: flex;
+  justify-content: space-around;
+  justify-items: center
+}
+.flex_clbe{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+.flex_be{
+  display: flex;
+  justify-content: space-between
+}
+.flex_sta{
+  display: flex;
+  justify-content: flex-start
+}
+.flex_row{
+  display: flex;
+  justify-content: start;
+  flex-direction: row-reverse
+}

@@ -1,0 +1,18 @@
+<view class="theone" wx:for="{{orderlist}}" wx:key='s'> 
+   <view class='status'>待付款</view>
+   <view class='flex_be'>
+      <image src='/image/index/fenlei_img_display@2x.png' mode='widthFix'></image>
+      <view class='rightgoods'>
+         <text>整体软装全能班7天</text>
+         <view class='price'>￥400</view>
+      </view>
+   </view>
+   <view class='botstatus'>
+     <text>2019.10.11</text>
+     <view class='buttons flex_row'>
+       <view class='pay'>支付</view>
+       <view class='giveup'>取消订单</view>
+       
+     </view>
+   </view>
+</view>

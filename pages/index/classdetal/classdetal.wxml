@@ -1,0 +1,47 @@
+<view class='content'>
+  <image src="/image/allclassbanner.jpg" mode="widthFix"></image>
+  <view class="flex_be topbg">
+      <view class="left" > 
+        品牌营销与运营课管理
+        <view style="margin:10rpx 0rpx">2015年8月15日~9月4日（66课时）</view>
+        <view class="bmbtn">报名</view>
+      </view>
+      <view class="right">
+       ￥ 2300
+      </view>
+  </view>
+</view>
+<view class="one">
+   <!-- 课程介绍 -->
+   <view class="title">课程介绍</view>
+   <view class="artical">挼装色彩萨克斯马克的决赛的对比局势丢坚实的大㕢大怒啥都会玩就能发不得不IQ安徽度恶化鸡蛋呢回复都不二位我回复敦化坊底部吧吃撒U盾he㡝
+   特傻逼电视电话帅互动式年底恢复
+   </view>
+   <view class="flex_sta">
+      <view class="markone {{index==2||index==3?'border':'bg'}} " wx:for="{{marklist}}" wx:key='d'>{{item}}</view>
+   </view>
+   <!-- 学习对象 -->
+    <view class="title">学习对象</view>
+   <view class="artical">挼装色彩萨克斯马克的决赛的对比局势丢坚实的大㕢大怒啥都会玩就能发不得不IQ安徽度恶化鸡蛋呢回复都不二位我回复敦化坊底部吧吃撒U盾he㡝
+   特傻逼电视电话帅互动式年底恢复
+   </view>
+   <!-- 课程展示 -->
+   <view class="title">课程展示</view>
+   <swiper  circular="true" class='swiper' autoplay="true" >
+     <block wx:for="{{banner}}" wx:key="banner">
+      <swiper-item class='swiperitem'>
+        <image src="{{item.img}}" class="{{index==bancurrentindex?'currentimg':'slideImage'}}" mode="widthFix" style="width: 100%" bindtap='test'  />
+        <!-- <view class='bannercontent'>{{item.title}}</view> -->
+      </swiper-item>
+      </block>
+    </swiper>
+    <!-- 课程讲师 -->
+    <view class="title">课程讲师</view>
+    <view class="teacher flex_be" wx:for='{{3}}'>
+        <image src="/image/index/1 (2).jpg" ></image>
+        <view class="teacherinfo">
+           <view class="name">往上考</view>
+           <view class="info">著名室内设计师著名室内设计师著名室内设计师著名室内著名室内设计师著名室内</view>
+        </view>
+    </view>
+</view>

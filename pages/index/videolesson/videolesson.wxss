@@ -1,0 +1,18 @@
+.onelesson{
+  width: 50%;
+  height: auto;
+  /* border: 1rpx solid red; */
+  box-sizing: border-box;
+  padding: 30rpx;
+  font-size: 28rpx
+}
+.onelesson image{
+  width: 100%;
+  display: block;
+  margin-bottom: 16rpx
+}
+.price{
+  font-size:30rpx;
+  color:red;
+  font-weight: bold
+}

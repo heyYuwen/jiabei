@@ -1,0 +1,31 @@
+<view class="usertop flex_sta">
+  <image src='/image/index/ABC.jpg' mode='widthFix'></image>
+  <view class='username'>
+     <view>柿子</view>
+     <view style='margin-top:10rpx'>ID2356</view>
+  </view>
+</view>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb' bindtap="myorder">
+   <text>我的订单</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' bindtap='tomyself'>
+   <text>个人信息</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' bindtap="vipcenter">
+   <text>会员中心</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' bindtap="jifen">
+   <text>我的积分</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' bindtap='myredpag'>
+   <text>红包</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>
+<view class='onebar flex_be' bindtap='mychangecode'>
+   <text>兑换码</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view>

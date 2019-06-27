@@ -1,0 +1,31 @@
+.usertop{
+  width: 80%;
+  height: 240rpx;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 40rpx
+}
+.usertop image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 60rpx
+}
+.username{
+ font-size: 30rpx;
+ margin-top: 15rpx
+}
+.onebar{
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 4px solid #fdfbfb;
+  box-sizing: border-box;
+  padding: 0rpx 60rpx;
+  line-height: 120rpx;
+  font-size: 30rpx;
+
+}
+.onebar image{
+  width: 30rpx;
+  margin-top: 30rpx
+}

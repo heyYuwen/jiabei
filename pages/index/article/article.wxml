@@ -1,0 +1,10 @@
+<!-- 加贝动态 -->
+<view class='mustnews'>
+ <view class='flex_be newslist' wx:for="{{newslist}}" wx:key='lessonlist'>
+   <image src='{{item.img}}' mode='widthFix'></image>
+   <view class='textright'>
+     <text>{{item.title}}</text>
+     <view class='itemcontent'>{{item.content}}</view>
+   </view>
+ </view>
+</view>

@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classes/classes",
+    "pages/propaganda/propaganda",
+    "pages/my/my",
+    "pages/my/myself/myself",
+    "pages/my/orderlist/orderlist",
+    "pages/my/redbag/redbag",
+    "pages/index/videolesson/videolesson",
+    "pages/index/alllesson/alllesson",
+    "pages/index/article/article",
+    "pages/index/audio/audio",
+    "pages/index/videodetail/videodetail",
+    "pages/my/vipcenter/vipcenter",
+    "pages/my/integral/integral",
+    "pages/my/upvip/upvip",
+    "pages/my/exchange/exchange",
+    "pages/propaganda/otherone/otherone",
+    "pages/propaganda/othertwo/othertwo",
+    "pages/index/classdetal/classdetal",
+    "pages/index/articledetail/articledetail"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "加贝软装",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#0253AB",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "image/tab/shouye_icon_default@2x.png",
+        "selectedIconPath": "image/tab/shouye_icon_pressd@2x.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "image/tab/fenlei_icon_default@2x.png",
+        "selectedIconPath": "image/tab/fenlei_icon_pressd@2x.png",
+        "pagePath": "pages/index/videolesson/videolesson",
+        "text": "视频课程"
+      },
+      {
+        "iconPath": "image/tab/tuiguang_icon_default@2x.png",
+        "selectedIconPath": "image/tab/tuiguang_icon_pressd@2x.png",
+        "pagePath": "pages/propaganda/propaganda",
+        "text": "推广"
+      },
+      {
+        "iconPath": "image/tab/tab_icon_default@2x.png",
+        "selectedIconPath": "image/tab/tab_icon_pressd@2x.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

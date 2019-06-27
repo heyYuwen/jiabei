@@ -1,0 +1,32 @@
+.content{
+  width: 100%;
+  height: 139rpx;
+  box-sizing: border-box;
+  border-bottom: 4px solid rgb(253, 253, 253);
+  padding: 20rpx 60rpx
+}
+.contentbox{
+  width: 80%;
+  height: 100rpx;
+  color: #0369D5;
+  font-size: 30rpx;
+  line-height: 100rpx
+
+}
+.contentbox image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 18rpx;
+  margin-right: 16rpx
+}
+.right{
+  width:80rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  color: #0369D5;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border: 1rpx solid #0369D5;
+  margin-top: 30rpx
+}

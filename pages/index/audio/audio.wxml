@@ -1,0 +1,8 @@
+<view class="content flex_be" wx:for="{{audiolist}}" wx:key='d'>
+   <view class='contentbox flex_sta' >
+      <image src='/image/btn_play_pressd@2x.png' mode='widthFix'></image>
+      <view>{{item.name}}</view> 
+   </view>
+   <view class='right' wx:if="{{item.price==0}}">免费</view>
+   <view class='right' wx:if="{{item.price>0}}">￥{{item.price}}</view>
+</view>

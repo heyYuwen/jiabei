@@ -1,0 +1,45 @@
+.topbox{
+  width: 100%;
+  height: 300rpx;
+  background: #0369D5;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  padding-top: 50rpx
+}
+.myintegral{
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  margin-bottom: 10rpx
+}
+.content{
+  width: 90%;
+  height: auto;
+  margin: auto
+}
+.namemaunu{
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  margin-bottom: 30rpx
+}
+.yourfirend{
+  width: 90%;
+  margin: auto;
+  height: 80rpx;
+  /* border: 1rpx solid #0369D5; */
+   line-height: 80rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx
+}
+.left{
+  width: 60%;
+ 
+  
+}
+.left image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin: 0rpx 20rpx
+}

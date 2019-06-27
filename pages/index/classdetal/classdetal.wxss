@@ -1,0 +1,105 @@
+.content{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.content image{
+  width: 100%
+}
+.topbg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+  color: #fff;
+  padding-top: 40rpx;
+}
+.bmbtn{
+  width: 120rpx;
+  height: 40rpx;
+  background: #0366C0;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 20rpx
+}
+.left{
+  width: 500rpx;
+  font-size: 28rpx
+}
+.right{
+  margin-top: 36rpx
+}
+.one{
+  width: 90%;
+  height: auto;
+  margin: auto;
+  font-size: 24rpx;
+}
+.title{
+  font-size: 32rpx;
+  margin-top: 80rpx;
+  margin-bottom: 30rpx;
+  font-weight: bold
+}
+.artical{
+  line-height: 40rpx;
+  letter-spacing: 2rpx;
+  color: #333
+}
+.markone{
+  width: 150rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-right: 30rpx;
+  margin-top: 60rpx
+}
+.bg{
+  background: #0366C0;
+  color: #fff;
+}
+.border{
+  border: 1rpx solid #0366C0;
+  color: #0366C0
+}
+swiper{
+  height: 325rpx;
+}
+.teacher{
+  width: 90%;
+  height:auto;
+  margin: auto;
+  margin-bottom: 40rpx
+}
+.teacher image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  
+}
+.teacherinfo{
+  width: 440rpx;
+  height: auto;
+}
+.name{
+  font-size: 32rpx;
+  margin-bottom: 10rpx
+}
+.teacherinfo{
+  font-size: 24rpx;
+  line-height: 40rpx;
+  letter-spacing: 1rpx
+}
+.info{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}

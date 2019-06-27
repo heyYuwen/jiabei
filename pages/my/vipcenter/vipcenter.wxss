@@ -1,0 +1,58 @@
+.vipcenter{
+  width: 86%;
+  height: auto;
+  margin: auto
+}
+.title{
+  margin-top: 100rpx
+}
+.vipcenter .text{
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 80rpx;
+}
+.center_box{
+  width: 300rpx;
+  margin: auto;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #0068C2;
+  margin-top: 50rpx;
+  line-height: 60rpx;
+  margin-bottom: 40rpx
+}
+.point{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #0068C2;
+  margin-top: 26rpx
+}
+.bigpoint{
+  width: 22rpx;
+  height:22rpx;
+  border-radius: 50%;
+  background: #0068C2;
+  margin-right: 30rpx;
+  margin-top: 20rpx
+}
+.list text{
+  font-size: 30rpx
+}
+.list{
+  height: 60rpx;
+  line-height: 60rpx
+}
+.boxbb{
+  width: 80%;
+  height: 80rpx;
+  background: #0068C2;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  margin: auto;
+  margin-top: 60rpx;
+  margin-bottom: 160rpx;
+  border-radius: 40rpx;
+  font-size: 30rpx
+}

@@ -1,0 +1,56 @@
+.navitem{
+  width: 150rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  margin: 20rpx;
+  display: inline;
+}
+.topnav{
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  width: 100%;
+  height: auto;
+
+}
+.scroll{
+  white-space: nowrap;
+}
+.active{
+  color: #0253AB
+}
+.itemswiper{
+  width: 48%;
+  height: auto;
+  background: #fff;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-bottom: 50rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx
+}
+.itemswiper image{
+  width: 100%;
+  margin-bottom: 28rpx
+}
+.thecenter{
+  width: 92%;
+  height: auto;
+  margin: auto
+}
+page{
+  background: #EEEDED
+}
+.itemswiper .text{
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.tab-box {
+  
+  border: 1rpx solid red;
+  box-sizing: border-box;
+}
+

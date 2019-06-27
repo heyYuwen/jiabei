@@ -1,0 +1,120 @@
+.headerbanner{
+  width: 100%;
+  height: auto;
+  margin: auto
+}
+swiper {
+  height: 400rpx;
+}
+.swiperitem{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 19rpx;
+  height: auto !important;
+  position: relative
+}
+.swiperitem image{
+  width: 100%;
+  height: auto;
+  border-radius: 20rpx
+}
+
+.bannercontent{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  color: #ffff;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 160rpx
+}
+/* 导航栏 */
+.navbar{
+  width: 100%;
+  height: 180rpx;
+  margin-top: 40rpx;
+  color: #015ED2;
+  box-shadow: 0rpx 0rpx 20rpx 10rpx rgb(248, 246, 246);
+  margin: 30rpx 0rpx 60rpx 0rpx;
+  box-sizing: border-box;
+  padding: 36rpx;
+}
+.onenav{
+  width: 25%;
+  height: 100%;
+  font-size: 22rpx;
+  text-align: center
+}
+.onenav image{
+  width:64rpx;
+  height: 64rpx;
+  display: block;
+  margin: auto;
+  margin-bottom: 20rpx
+}
+/* 最新新闻 */
+.mustnews{
+  width: 94%;
+  height: auto;
+  margin: auto;
+}
+.news_title{
+  font-size: 38rpx;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 36rpx
+}
+.lesson_one{
+  width: 48%;
+  height: auto;
+  margin-bottom:52rpx;
+  font-size: 30rpx
+}
+.lesson_one image{
+  display: block;
+  width: 100%;
+  height: 176rpx;
+  margin-bottom: 22rpx
+}
+.more{
+  width: 97rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  background: #015ED2;
+  color: #ffff
+}
+.mustnews .flex_be{
+  font-size: 22rpx;
+  color: rgb(71, 63, 63);
+  margin-top: 16rpx
+}
+.newslist{
+  width: 100%;
+  height: auto;
+  margin-bottom: 20rpx
+}
+.newslist image{
+  width: 40%;
+  height: auto
+}
+.textright{
+  width: 54%;
+  height: 140rpx;
+  margin-top: 26rpx
+ 
+}
+.textright text{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx
+}
+.itemcontent{
+   font-size: 28rpx;
+   margin-top: 30rpx;
+   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

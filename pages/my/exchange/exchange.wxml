@@ -1,0 +1,25 @@
+<view class="containera">
+   <view class="navlist flex_ar">
+        <view class="nav " bindtap="changenav" data-index="{{index}}" wx:for="{{listnav}}" wx:key='d'>
+            <view>{{item}}</view>
+            <view class="on" wx:if="{{current==index}}"></view>
+        </view>
+   </view>
+   <view class="" wx:if="{{current==0}}" style="margin-top:20rpx">
+      <view wx:for='{{already}}' wx:key='asa' class="quan flex_be">
+         <view >302456452-221</view>
+         <view>2014/5/8</view>
+      </view>
+   </view>
+   <view wx:if="{{current==1}}">
+     <view class="inputBox">
+       <input placeholder="输入兑换码" placeholder-class="obo" maxlength="20"></input>
+       <view class="duihuanbtn">立即兑换</view>
+     </view>
+     <view class="intrude">
+       <view style="margin-bottom:30rpx">兑换码说明</view> 
+       <text>兑换码是由加贝通过特定渠道发给用户的一种优惠形式作为兑换购买课程优惠券的凭证，成功兑换后，将成功保存于用户的个人账户中</text>
+     </view>
+     <view></view>
+   </view>
+</view>
