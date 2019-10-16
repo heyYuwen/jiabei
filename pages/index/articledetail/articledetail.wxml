@@ -1,11 +1,12 @@
+<import src="../../../wxParse/wxParse.wxml"/>
 <view class="container">
-    <view class="title">互联网高管的咖啡创业计划书</view>
+    <view class="title">{{content.title}}</view>
+    <image src="{{content.cover_url}}" mode="widthFix"></image>
     <view class="classinfoma">
-     【课程介绍】
-     国际度假酒店抵抗力撒蒂萨降低哨基地地阿什顿距离多少度爱的鹔修的沙拉大盘打的么U欧爱的速递的卡搜啊都是 点击骚动我减肥丢胡荣华大叔杜恩格斯
-     国际度假酒店抵抗力撒蒂萨降低哨基地地阿什顿距离多少度爱的鹔修的沙拉大盘打的么U欧爱的速递的卡搜啊都是 点击骚动我减肥丢胡荣华大叔杜恩格斯
+         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
-    <image src="/image/allclassbanner.jpg" mode="widthFix"></image>
+    <!-- <text>{{content}}</text> -->
+    <!-- <image src="{{item.cover_url}}" mode="widthFix"></image>
      <view class="classinfoma">
      【课程介绍】
      国际度假酒店抵抗力撒蒂萨降低哨基地地阿什顿距离多少度爱的鹔修的沙拉大盘打的么U欧爱的速递的卡搜啊都是 点击骚动我减肥丢胡荣华大叔杜恩格斯
@@ -16,5 +17,5 @@
      【课程介绍】
      国际度假酒店抵抗力撒蒂萨降低哨基地地阿什顿距离多少度爱的鹔修的沙拉大盘打的么U欧爱的速递的卡搜啊都是 点击骚动我减肥丢胡荣华大叔杜恩格斯
      国际度假酒店抵抗力撒蒂萨降低哨基地地阿什顿距离多少度爱的鹔修的沙拉大盘打的么U欧爱的速递的卡搜啊都是 点击骚动我减肥丢胡荣华大叔杜恩格斯
-    </view>
+    </view> -->
 </view>

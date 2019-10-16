@@ -1,4 +1,7 @@
 import modals from '../../utils/methods.js'
+const request = require('../../utils/https.js')
+const utils = require('../../utils/util.js')
+const app = getApp()
 Page({
   data: {
     banner:[
@@ -29,25 +32,54 @@ Page({
         img: '/image/index/jiabeidongtai_icon@2x.png', title: '愿你走出半身，归来仍是少年。14天软装速成记！',
         content: '通过14天的学习，第36期培训伙伴徐诶此都能接受的'
       }
-    ]
+    ],
+    courses:'', //课程
+    news:'',    //最新动态
   },
+  //导航
   navto:function(e){
-   console.log(e.currentTarget.dataset.item)
     let index = e.currentTarget.dataset.index
-   console.log(index)
-
-   if(index==2){
-     modals.navigate("/pages/index/videolesson/videolesson")
-   }else if(index==0){
-     modals.navigate("/pages/index/alllesson/alllesson")
-   }else if(index==1){
-     modals.navigate("/pages/index/audio/audio")
-   }
+    if(index==2){
+      modals.switchtab("/pages/index/videolesson/videolesson")
+    }else if(index==0){
+      modals.navigate("/pages/index/alllesson/alllesson")
+    }else if(index==1){
+      modals.navigate("/pages/index/audio/audio")
+    }else if(index==3){
+      modals.navigate("/pages/index/article/article")
+    }
   },
   onLoad: function () {
-   
+    let  that=this
+    // // 最新课程，加贝动态
+    // console.log(utils.get('token'))
+    let url = app.globalData.api + 'api/mp/index'
+    request.sendRequest(url, 'GET')
+      .then(function (res) {
+         that.setData({
+           courses: res.data.courses,
+           news:res.data.news
+         })
+    })
+    let url1 = app.globalData.api + 'api/mp/banners'
+    request.sendRequest(url1,'GET').then(function(res){
+           console.log(res.data)
+           that.setData({
+             banner:res.data
+           })
+    })
   },
-  getUserInfo: function(e) {
-   
+  coursesdetail:function(e){
+    let id=e.currentTarget.dataset.item
+    console.log(id)
+    let url = "/pages/index/classdetal/classdetal?id="
+    modals.navigate(url,id)
+  },
+  onShow:function(){
+  },
+  newsdetail:function(e){
+    let id = e.currentTarget.dataset.item
+    let url = "/pages/index/articledetail/articledetail?id="
+    modals.navigate(url, id)
   }
 })

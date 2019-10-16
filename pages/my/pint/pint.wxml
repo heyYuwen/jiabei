@@ -1,0 +1,24 @@
+
+<view wx:if="{{!list==''}}"  >
+  <view class="content" wx:for="{{list}}" wx:key="li">
+    <view class="flex_be topbox">
+        <view>{{item.created_at}} 开始助力</view>
+        <view wx:if="{{item.status==0}}">助力中</view>
+        <view wx:if="{{item.status==2}}">助力失败</view>
+        <view wx:if="{{item.status==1}}">助力成功</view>
+        <!-- <view wx:if="{{item.status}}">助力成功</view> -->
+    </view>
+    <view class="flex_be">
+      <image class="lessonimg" mode="widthFix" src="/image/arelist.png"></image>
+      <view class="right">
+          <text>还差一点点就能拿到大奖啦</text>
+      </view>
+      <view class="detail" data-id="{{item.id}}"  bindtap="todetail" >助力详情</view>
+    </view>
+  </view>
+  <view class="nomore" wx:if="{{nomore}}">————没有更多了————</view>
+</view>
+<view wx:else class="empty">
+   <image src="/image/empty1.png" style="width:50%;display:block;margin:auto; margin-top:120rpx" mode="widthFix"></image>
+   <view>您还没有，快去分享得红包吧</view>
+</view>

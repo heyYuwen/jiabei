@@ -1,18 +1,31 @@
-<view class="theone" wx:for="{{orderlist}}" wx:key='s'> 
-   <view class='status'>待付款</view>
+
+<view  wx:if="{{!list==''}}">
+<view class="theone" wx:for="{{list}}" wx:key='s'> 
+   <view class='status' wx:if="{{item.status=='pending'}}">待付款</view>
+   <view class='status' wx:if="{{item.status=='paid'}}">已支付</view>
+   <view class='status' wx:if="{{item.status=='sended'}}">已支付</view>
+   <view class='status' wx:if="{{item.status=='finished'}}">订单完成</view>
+   <view class='status' wx:if="{{item.status=='canceled'}}">订单取消</view>
    <view class='flex_be'>
-      <image src='/image/index/fenlei_img_display@2x.png' mode='widthFix'></image>
+      <image wx:if="{{!item.order_product.product_cover}}" src="/image/vipcard.jpg" mode="widthFix"></image>
+      <image wx:if="{{item.order_product.product_cover}}" src='{{item.order_product.product_cover}}' mode='widthFix'></image>
       <view class='rightgoods'>
-         <text>整体软装全能班7天</text>
-         <view class='price'>￥400</view>
+         <text>{{item.order_product.title}}</text>
+         <view class='price'>￥{{item.order_product.price}}</view>
       </view>
    </view>
    <view class='botstatus'>
-     <text>2019.10.11</text>
+     <text>{{item.created_at}}</text>
      <view class='buttons flex_row'>
-       <view class='pay'>支付</view>
-       <view class='giveup'>取消订单</view>
-       
+       <view class='pay' wx:if="{{item.status=='pending'}}" bindtap="topay" data-item="{{item}}">支付</view>
+       <!-- <view class='pay' wx:if="{{item.status=='sended'||item.status=='paid'}}" bindtap="backmoney" data-item="{{item}}">退款</view> -->
+       <view class='giveup' wx:if="{{item.status=='pending'}}" bindtap="cancelorder" data-item="{{item}}">取消订单</view>
      </view>
    </view>
+</view>
+<view class="nomore" wx:if="{{nomore}}">————我也是有底线的————</view>
+</view>
+<view  wx:else  class="empty" >
+   <image src="/image/empty2.png" style="width:50%;display:block;margin:auto; margin-top:120rpx;margin-bottom:40rpx" mode="widthFix"></image>
+   <view>您还没有订单呢，快去购买课程学习起来吧</view>
 </view>

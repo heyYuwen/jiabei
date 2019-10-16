@@ -2,21 +2,48 @@
     <view class='username'>
       我的头像
     </view>
-    <image src='/image/index/ABC.jpg' mode='widthFix'></image>
+    <image src='{{userinfo.avatar_url}}' mode='widthFix'></image>
 </view>
 <view class='onebar flex_be' style='border:4px solid #fdfbfb'>
    <text>手机号码</text>
-   <image src='/image/index/more.png' mode='widthFix'></image>
+    <view class="name">{{userinfo.phone}}</view>
+    
 </view>
-<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb' bindtap="changename">
    <text>昵称</text>
-   <image src='/image/index/more.png' mode='widthFix'></image>
+   <view class="name">{{userinfo.nick_name}}</view>
 </view>
-<view class='onebar flex_be' style='border:4px solid #fdfbfb'>
+<view class='onebar flex_be' style='border:4px solid #fdfbfb' bindtap="changesex">
    <text>性别</text>
-   <image src='/image/index/more.png' mode='widthFix'></image>
+  <view class="name" wx:if="{{userinfo.gender==1}}">男</view>
+  <view class="name"  wx:if="{{userinfo.gender==2}}">女</view>
+  <view class="name"  wx:if="{{userinfo.gender==0}}">未知</view>
 </view>
 <view class='onebar flex_be' style='border:4px solid #fdfbfb'>
    <text>地区</text>
-   <image src='/image/index/more.png' mode='widthFix'></image>
+   <view class="name">{{userinfo.country}}{{userinfo.province}}{{userinfo.city}}</view>
+</view>
+<view class="cover" wx:if="{{close}}">
+   <view class="content">
+      <image class="close" bindtap="changename" src="/image/close.png" mode="widthFix"></image>
+      <view class="title">起一个好听的名字吧~</view>
+      <input placeholder="{{userinfo.nick_name}}" bindinput="dataupname"></input>
+      <view class="btnbox">
+         <view class="no" bindtap="changename">取消</view>
+         <view class="yes" bindtap="subname">保存</view>
+      </view>
+   </view>
+</view>
+<view class="cover" wx:if='{{sexf}}'>
+  <view class="sexbox">
+     <view class="sex {{userinfo.gender-1==index?'active':''}}" bindtap="selectsex" data-index="{{index}}" wx:for="{{sexlist}}" wx:key='a'>{{item}}</view>
+  </view>
+</view>
+<view class="cover" wx:if='{{isphone}}'>
+    <view class="centerbox">
+           <image src="/image/logo.jpg"></image>
+           <view>加贝软装学院需要您授权手机号</view>
+           <button open-type="getPhoneNumber" bindgetphonenumber="getuerphone">获取手机号</button>
+    </view>
+    
 </view>

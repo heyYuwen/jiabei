@@ -1,4 +1,6 @@
-// pages/index/article/article.js
+import modals from '../../../utils/methods.js'
+const request = require('../../../utils/https.js')
+const app = getApp()
 Page({
 
   /**
@@ -32,12 +34,24 @@ Page({
       }
     ]
   },
-
+  todetail:function(e){
+    let id=e.currentTarget.dataset.item
+    let url = "/pages/index/articledetail/articledetail?id="
+    modals.navigate(url,id)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that=this
+    let url = app.globalData.api + 'api/mp/jiabei_news'
+    request.sendRequest(url, 'GET')
+      .then(function (res) {
+         console.log(res.data.data)
+         that.setData({
+           newslist:res.data.data
+         })
+      })
   },
 
   /**

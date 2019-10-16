@@ -19,14 +19,29 @@
     "pages/propaganda/otherone/otherone",
     "pages/propaganda/othertwo/othertwo",
     "pages/index/classdetal/classdetal",
-    "pages/index/articledetail/articledetail"
-
+    "pages/index/articledetail/articledetail",
+    "pages/propaganda/otherthree/otherthree",
+    "pages/my/makesure/makesure",
+    "pages/my/useredbag/useredbag",
+    "pages/index/audio/audiodetail/audiodetail",
+    "pages/index/login/login",
+    "pages/my/pint/pint"
+    
+  ],
+  "requiredBackgroundModes": [
+    "audio"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "加贝软装",
     "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 1000000,
+    "connectSocket": 100000,
+    "uploadFile": 100000,
+    "downloadFile": 100000
   },
   "tabBar": {
     "color": "#000",
@@ -50,7 +65,7 @@
         "iconPath": "image/tab/tuiguang_icon_default@2x.png",
         "selectedIconPath": "image/tab/tuiguang_icon_pressd@2x.png",
         "pagePath": "pages/propaganda/propaganda",
-        "text": "推广"
+        "text": "分享有礼"
       },
       {
         "iconPath": "image/tab/tab_icon_default@2x.png",

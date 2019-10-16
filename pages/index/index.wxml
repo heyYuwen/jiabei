@@ -1,10 +1,11 @@
 <!-- 轮播 -->
 <view class='headerbanner'>
-  <swiper  circular="true" class='swiper' bindchange='aa' current="{{bancurrentindex}}">
+  <swiper  circular="true" class='swiper' autoplay="true"  current="{{bancurrentindex}}">
     <block wx:for="{{banner}}" wx:key="banner">
       <swiper-item class='swiperitem'>
-        <image src="{{item.img}}" class="{{index==bancurrentindex?'currentimg':'slideImage'}}" mode="widthFix" style="width: 100%" bindtap='test'  />
-        <!-- <view class='bannercontent'>{{item.title}}</view> -->
+          <view class="slideImage">
+              <image src="{{item.url}}"  mode="widthFix" style="width: 100%" bindtap='test'  />
+          </view>
       </swiper-item>
     </block>
   </swiper>
@@ -20,12 +21,12 @@
 <view class='mustnews'>
     <view class='news_title'>最新课程</view>
     <view class='flex_clbe'>
-      <view class='lesson_one'  wx:for="{{lessonlist}}" wx:key="s">
-        <image src="{{item.img}}" ></image>
-        <text class='felx'>{{item.name}}</text>
+      <view class='lesson_one'  wx:for="{{courses}}" wx:key="s" >
+        <image src="{{item.cover_url}}" ></image>
+        <text class='felx'>{{item.title}}</text>
         <view class='flex_be'>
-          <text>{{item.time}}</text>
-          <view class='more'>了解</view>
+          <text>{{item.expire_time}}</text>
+          <view class='more'  data-item="{{item.id}}" bindtap="coursesdetail">了解</view>
         </view>
       </view>
       
@@ -34,11 +35,11 @@
 <!-- 加贝动态 -->
 <view class='mustnews' style='margin-top:50rpx'>
  <view class='news_title'>加贝动态</view>
- <view class='flex_be newslist' wx:for="{{newslist}}" wx:key='lessonlist'>
-   <image src='{{item.img}}' mode='widthFix'></image>
+ <view class='flex_be newslist' wx:for="{{news}}" wx:key='lessonlist' data-item="{{item.id}}" bindtap="newsdetail" >
+   <image src='{{item.cover_url}}' mode='widthFix'></image>
    <view class='textright'>
-     <text>{{item.title}}</text>
-     <view class='itemcontent'>{{item.content}}</view>
+     <view class="text">{{item.title}}</view>
+     <view class='itemcontent'>{{item.intro}}</view>
    </view>
  </view>
 </view>

@@ -1,3 +1,4 @@
+@import "../../../wxParse/wxParse.wxss";
 .container .title{
   font-size: 29rpx;
   font-weight: bold;

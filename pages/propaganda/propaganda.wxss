@@ -1,27 +1,60 @@
-.shareimg{
-  width: 90%;
-  height:auto;
-  margin: auto
-}
-.shareimg image{
-  width: 100%
-}
-.content{
+.otherboxs{
   width: 90%;
   height: auto;
-  background: #fff;
-  font-size: 28rpx;
-  box-sizing: border-box;
-  padding:  30rpx ;
   margin: auto;
-  border-radius: 10rpx;
-  line-height: 50rpx;
-  margin-top: 30rpx;
-  box-shadow: 0rpx 0rpx 30rpx 5rpx rgb(247, 245, 245);
-  margin-bottom: 30rpx
+  /* border: 1rpx saddlebrown solid; */
+  position: relative;
+  margin-top: 40rpx
+}
+.otherboxs image{
+  width: 100%;
+}
+.otherboxs .rules{
+  width: 124rpx;
+  height: 38rpx;
+  /* border: 1rpx seagreen solid; */
+  position: absolute;
+  top: 40rpx;
+  left: 50rpx;
+}
+.topfenxiang{
+  width: 200rpx;
+  height: 52rpx;
+  position: absolute;
+  bottom: 39rpx;
+  left: 230rpx;
+  background: rgba(0, 0, 0, 0)
+}
+.cover{
+  width: 94%;
+  height: auto;
+  border-radius: 12rpx;
+  background: rgba(0, 0, 0, 1);
+  position: absolute;
+  bottom: -40rpx;
+  left: 3%;
+  font-size: 22rpx;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 20rpx;
+  line-height: 40rpx
+}
+.cover1{
+  width: 94%;
+  height: auto;
+  border-radius: 12rpx;
+  background: rgba(0, 0, 0, 1);
+  position: absolute;
+  top:80rpx;
+  left: 3%;
+  font-size: 22rpx;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 20rpx;
+  line-height: 40rpx
 }
 .share{
-  width: 80%;
+  width: 84%;
   height: 80rpx;
   background: #FC302F;
   text-align: center;
@@ -29,8 +62,8 @@
   color: #fff;
   font-size: 28rpx;
   margin: auto;
-  border-radius: 45rpx;
-  margin-bottom: 20rpx
+  margin-bottom: 20rpx;
+  margin-top: 30rpx
 }
 .cover{
   width: 100%;
@@ -52,6 +85,9 @@
   box-sizing: border-box;
   padding-top: 30rpx
 }
+.shares text{
+  font-size: 30rpx
+}
 .shares .one{
   width: 150rpx !important;
   height: 200rpx !important;
@@ -64,46 +100,11 @@
   background: #fff;
 }
 .shares .one image{
-  width: 120rpx;
+  width: 110rpx;
   display: block;
   margin: auto;
   margin-bottom: 10rpx
 }
 button::after{
 border:none;
-}
-
-.win3{
-  
-  width: 100%;
-  height: 100%;
-  background: #EFEFEF;
-  padding-top: 50rpx;
-  position: fixed;
-
-}
-.youhui{
-  display: block;
-  width: 90%;
-  margin: auto;
-  margin-bottom: 40rpx
-}
-.youhuia{
-  display: block;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 40rpx
-}
-.help{
-  width: 70%;
-  height: 80rpx;
-  background: #FC302F;
-  text-align: center;
-  line-height: 80rpx;
-  color: #fff;
-  font-size: 28rpx;
-  margin: auto;
-  margin-bottom: 30rpx
-
-
 }

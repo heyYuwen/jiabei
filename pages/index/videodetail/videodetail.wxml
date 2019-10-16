@@ -1,61 +1,75 @@
-<view class="content">
-  <view wx-if="{{cover}}">
-    <image src='{{poster}}' mode="widthFix"></image>
-    <view class='shikan' bindtap='start'>试看一分钟</view>
+<!-- 没买 -->
+<view class="content a" wx:if="{{lessondetail.buyed==false}}">
+  <view wx-if="{{cover==true}}">
+    <image class="lessonbg" src='{{lessondetail.cover_url}}' mode="center"></image>
+    <view class='shikan' bindtap='start'>试看2分钟</view>
   </view>
-  <video id='0' wx-if="{{!cover}}" src="{{video}}"
-    controls="true" bindtimeupdate='playa' initial-time="{{time}}" vslide-gesture-in-fullscreen>
+  <video id='{{currentid}}' wx-if="{{cover==false}}" src="{{video}}"
+    controls="true" bindtimeupdate='playa' initial-time="{{time}}" custom-cache="{{false}}"  bindwaiting='videowating' bindplay='stratplay'>
+  </video>
+</view>
+<!-- 买了 -->
+<view class="content b" wx:if="{{lessondetail.buyed==true}}">
+  <video id='s{{list[indexof].id}}'  src="{{video}}"  controls="true"   bindtimeupdate='playb' initial-time="{{time}}" bindplay="allvideo" initial-time="{{playdtime}}" >
   </video>
 </view>
 <view class='container'>
-  <view class='title'>整体软装全能班7天整体软装全能班7天</view>
+  <view class='title'>{{lessondetail.title}}</view>
   <view class='price_box flex_sta'>
-    <view class='price'>￥46</view>
-    <view class='number'>共一节课</view>
-    <view>337人已看</view>
+    <view class='price' wx:if="{{phonetype!='ios'}}">￥{{lessondetail.price}}</view>
+    <view class='number'>共{{lessondetail.detail.length}}节课</view>
+    <view>{{lessondetail.look_num}}人已看</view>
   </view>
 </view>
 <view class='tabnav'>
   <view class='nav flex_ar'>
-    <view class="cont {{index==currentindex?'curr':''}} " data-index='{{index}}' data-='' wx:for="{{nav}}" wx:key="n" bindtap='changetab'>
+    <view class="cont {{index==navactive?'curr':''}} " data-index='{{index}}' data-='' wx:for="{{nav}}" wx:key="n" bindtap='changetab'>
       {{item}}
-      <view wx:if="{{index==currentindex}}" style='border-bottom:2px solid #0369D5;margin-top:16rpx'></view>
+      <view wx:if="{{index==navactive}}" style='border-bottom:2px solid #0369D5;margin-top:16rpx'></view>
     </view>
   </view>
 </view>
-<view class='itemcontent container' wx:if="{{currentindex==0}}">
+<view class='itemcontent container' wx:if="{{navactive==0}}">
   <text>讲师介绍</text>
   <view class='flex_be oneswiper'>
-    <image src='/image/index/ABC.jpg' mode='widthFix'></image>
-    <view class='leftinfo'>屋里门外设计公司/资深配饰设计师/力透产品创始人，创意总监家居媒体资深编辑 资深配饰设计师多年来完成大量会所 样板间等商业项目的室内配饰设计工作
-    </view>
+    <image src='{{lessondetail.cover_url}}' mode='widthFix'></image>
+    <view class='leftinfo'>{{lessondetail.lecturer.intro}}</view>
   </view>
   <text>课程介绍</text>
-  <view class='lessoninfo'>【国际色彩形体搭配师】ICID（international color designer）国际认证通过针对不同软装风格的color（颜色），material（材料），pattern（图文形态）
-  </view>
+  <view class='lessoninfo'>{{lessondetail.intro}}</view>
 </view>
-<view class='itemcontent ' wx:if="{{currentindex==1}}">
- <view class='flex_be onevideo' wx:for="{{videolist}}" wx:key='d'>
+<view class='itemcontent ' wx:if="{{navactive==1}}">
+ <view class='flex_be onevideo' wx:for="{{list}}" wx:key='d'>
     <view class='flex_sta'>
-      <image src='/image/btn_play_pressd@2x.png' mode='widthFix'></image>
-        S1
+      <image  wx:if="{{index===currentindex}}" src='/image/btn_play_default@2x.png' mode='widthFix'></image>
+      <image  wx:else src='/image/btn_play_pressd@2x.png' mode='widthFix'></image>
+        S{{index+1}} <view style="font-size:20rpx;margin-left:20rpx;margin-top:6rpx" wx:if="{{indexof==index}}">(当前视频)</view>
     </view>
-    <view class='watch'>试看</view>
+    <view class='watch' data-index="{{index}}" wx:if="{{lessondetail.buyed==false}}" data-id="{{item.id}}" bindtap="shikan">试看</view>
+    <view class='watch' data-index="{{index}}" wx:if="{{lessondetail.buyed==true}}" data-id="{{item.id}}" bindtap="shikan">观看</view>
  </view>
 </view>
-<view class='itemcontent' wx:if="{{currentindex==2}}">
-  <view class='flex_sta threebox' wx:for="{{videolist}}" wx:key="d">
-      <image class='username' src='/image/index/ABC.jpg' mode='widthFix'></image>
+<view class='itemcontent' wx:if="{{navactive==2}}">
+  <view class='flex_sta threebox' wx:for="{{lessondetail.discusses}}" wx:key="d">
+      <image class='username' src='{{item.member.avatar_url}}' mode='widthFix'></image>
       <view class='pinglun'>
-         <view>刘老师</view>
-         <view>感觉知识点讲的很透彻全面。</view>
+         <view class="teachername">{{item.member.nick_name}}</view>
+         <view class="pltext">{{item.content}}</view>
       </view>
   </view>
 </view>
-<view class='bottom flex_ar'>
-  <button open-type="share">
+<view class='bottom'>
+  <button open-type="share" class="sharebtn">
      <image src='/image/fenxiang_btn@2x.png' mode='widthFix'></image>
-     <text>分享</text> 
+     <view>分享</view> 
   </button>
-  <view class='tobuy'>立刻购买</view>
+  <view class="plimg" wx:if="{{navactive==2&&lessondetail.buyed==true}}" bindtap="pinlun">
+      <image src="/image/pinglun@2x.png" mode="widthFix"></image>
+      <view>评论</view>
+  </view>
+  <view class='tobuy' bindtap="buy" wx:if="{{phonetype!='ios'}}">立刻购买</view>
+</view>
+<view class="pinlunbox" wx:if="{{plwind}}">
+    <textarea placeholder="写评论" bindinput="mywrite" value="" name="pl"></textarea>
+    <view class="submit {{blue==1?'blue':''}} " bindtap="submit">提交</view>
 </view>

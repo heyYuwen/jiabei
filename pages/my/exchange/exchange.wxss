@@ -65,5 +65,5 @@
   margin-top: 60rpx
 }
 .intrude text{
-  font-size: 30rpx
+  font-size: 28rpx
 }

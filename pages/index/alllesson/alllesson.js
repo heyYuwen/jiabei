@@ -1,65 +1,37 @@
-// pages/index/alllesson/alllesson.js
+import modals from '../../../utils/methods.js'
+const request = require('../../../utils/https.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     alllesson:[1,2.3,3,3,3]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  detail:function(e){
+    let url ="/pages/index/classdetal/classdetal?id="
+    let id=e.currentTarget.dataset.item
+    modals.navigate(url,id)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  onLoad: function (options) {
+    let that=this
+    let url = app.globalData.api + 'api/mp/courses'
+    request.sendRequest(url, 'GET')
+      .then(function (res) {
+        
+        console.log(res.data.data)
+        that.setData({
+          list:res.data.data
+        })
+      })
+  },
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

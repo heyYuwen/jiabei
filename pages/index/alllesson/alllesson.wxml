@@ -1,7 +1,7 @@
 <view class="videoles flex_clbe" >
-   <view class='onelesson' wx:for="{{alllesson}}" wx:key="d">
-      <image src='/image/index/jiabeidongtai_icon@2x.png' mode='widthFix'></image>
-      整体软装全能班7天
-      <text style='font-size:24rpx;color:#AFAFAF'>2019/7/10-21</text>
+   <view class='onelesson' wx:for="{{list}}" wx:key="d" data-item="{{item.id}}" bindtap="detail">
+      <image src='{{item.cover_url}}' mode='widthFix'></image>
+      {{item.title}}
+      <text style='font-size:24rpx;color:#AFAFAF'>{{item.start_time}}</text>
    </view>
 </view>

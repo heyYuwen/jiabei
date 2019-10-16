@@ -1,7 +1,10 @@
-<view class="vipcenter">
-    <view class='text'>您还不是会员哦</view>
+<view class="vipcenter" >
+    <view class='text' wx:if="{{realvip}}">您还不是会员哦</view>
+    <view class='text' wx:if="{{!realvip}}">VIP会员您好</view>
+    
+    <view class="timer" wx:if="{{!realvip}}">您的会员将在{{time}}到期 </view>
     <view class='title'>
-      <text>VIP会员权益</text>
+      <text class="viptitle">VIP会员权益</text>
       <view class='center_box flex_ar'>
         <view class='point'></view>
         <view>您将享受如下特权</view>
@@ -24,33 +27,8 @@
           <text>分享即获得丰厚奖学金分红</text>
       </view>
     </view>
-    <view class='title'>
-      <text>SVIP会员权益</text>
-      <view class='center_box flex_ar'>
-        <view class='point'></view>
-        <view>您将享受如下特权</view>
-        <view class='point'></view>
-      </view>
-      <view class='flex_sta list'>
-          <view class='bigpoint'></view>
-          <text>线上精选课程全年免费观看</text>
-      </view>
-      <view class='flex_sta list'>
-          <view class='bigpoint'></view>
-          <text>所有课程全年免费回顾复习</text>
-      </view>
-      <view class='flex_sta list'>
-          <view class='bigpoint'></view>
-          <text>线上积分可以线下抵扣</text>
-      </view>
-      <view class='flex_sta list'>
-          <view class='bigpoint'></view>
-          <text>三级分享模式获丰厚奖学金</text>
-      </view>
-       <view class='flex_sta list'>
-          <view class='bigpoint'></view>
-          <text>高端人脉资源助您资源整合</text>
-      </view>
+    <view wx:if="{{phonetype!='ios'}}">
+          <view class='boxbb' bindtap="up" wx:if="{{realvip}}">升级会员</view>
+          <view class='boxbb' bindtap="up" wx:if="{{!realvip}}">续费</view>
     </view>
-    <view class='boxbb' bindtap="up">升级会员</view>
 </view>

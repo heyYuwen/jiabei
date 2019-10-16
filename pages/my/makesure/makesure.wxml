@@ -1,0 +1,34 @@
+<view class="container">
+    <view class="flex_be container">
+        <image class="leftimg" src="{{goodsinfo.product.cover_url}}" mode="widthFix"></image>
+        <view class="right">
+           <view>{{goodsinfo.product.title}}</view>
+           <view class="price">￥{{total_money}}</view>
+        </view>
+    </view>
+    <view class="boxshow">
+        <view class="flex_be" style="tousered" bindtap="usehb">
+              <view>红包抵扣</view>
+              <view class="flex_be bob">
+                  <view class="redqian">-￥{{redbag}}</view>
+                  <image class="more" src="/image/index/moreq.png" mode="widthFix"></image>
+              </view>
+        </view>
+         <view class="flex_sta " style="margin:20rpx 0rpx">
+            <view>会员折扣:</view>
+            <view style="margin-left:50rpx" class="redcolor" >-￥{{vipzou}}</view>
+        </view>
+         <view class="flex_sta redcolor" >
+            <view>总折扣:</view>
+            <view style="margin-left:50rpx">-￥{{amount_zk}}</view>
+        </view>
+         <view class="flex_be">
+              <view>订单总价</view>
+              <view class="redcolor">￥{{reallmoney}}</view>
+        </view>
+    </view>
+    <view class="topay flex_be">
+        <view class="content redcolor">实付 ￥{{reallmoney}}</view>
+        <view class="pay" bindtap="wxpay">立即支付</view>
+    </view>
+</view>

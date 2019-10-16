@@ -1,78 +1,73 @@
 import modals from '../../../utils/methods.js'
+const request = require('../../../utils/https.js')
+const util = require('../../../utils/util.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    assistanceId:'',
   },
-  help:function(){
-    modals.navigate('/pages/propaganda/othertwo/othertwo')
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function (res) {
-    let id = wx.getStorageSync('shareId') // 分享产品的Id
-    let idarray = [1, 2, 3]
-    let that = this
-    if (res.from === 'button') {
-      console.log(res.target)
+    console.log(options,'接受')
+    if (options.assistanceId){
+      console.log('直接分享朋友',options.assistanceId)
+        this.setData({
+          assistanceId: options.assistanceId
+        })
     }
-    return {
-      title: '在吗？拜托帮我点一下！220元课程优惠券免费领',
-      imageUrl: '/image/img_fenxiang_dianji@2x.png',
-      path: "/pages/propaganda/otherone/otherone"
+    if (options.scene){
+      var scene = decodeURIComponent(options.scene)
+      console.log('扫码扫码进入', scene)
+      this.setData({
+        assistanceId: scene
+      })
     }
+    
+  },
+  // 帮好友助力
+  help:function(){
+    if(wx.getStorageSync('token')){
+          let that = this
+         let userid = wx.getStorageSync('all_info').id
+          let url = app.globalData.api + 'api/mp/assistance/join'
+          let data = {
+            begin_team_id: that.data.assistanceId,
+            participant_id: userid
+          }
+          request.sendRequest(url, 'post', data)
+            .then(function (res) {
+              console.log(res.data)
+              util.set('token', res.header.refresh_token)
+              let assistanceId = that.data.assistanceId
+              console.log('团id', assistanceId)
+              if (res.data.error == 0) {
+                let urls = "/pages/propaganda/othertwo/othertwo?assistanceId="
+                modals.showToast('助力成功', "success")
+                setTimeout(function () {
+                  modals.navigate(urls, assistanceId)
+                }, 500)
+              } else if (res.data.error == 1) {
+                modals.showToast('参加人数已满', "loading")
+              } else if (res.data.error == 2) {
+                modals.showToast('团机会已使用', "loading")
+              } else {
+                modals.showToast('参团失败', "loading")
+              }
+        })
+    }else{
+      wx.navigateTo({
+        url: '/pages/index/login/login',
+      })
+    }
+    
+  },
+  // 去使用这个红包
+  touse: function () {
+    modals.switchtab('/pages/index/index')
+  },
+  boxton:function(){
+    modals.switchtab('/pages/propaganda/propaganda')
+  },
+  onShow:function(){
+    
   }
 })

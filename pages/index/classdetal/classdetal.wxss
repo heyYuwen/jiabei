@@ -1,8 +1,14 @@
+scroll-view{
+   position: fixed;
+   top: 0rpx;
+   left: 0rpx
+}
 .content{
   width: 100%;
-  height: auto;
+  height: 250rpx;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden
 }
 .content image{
   width: 100%
@@ -28,11 +34,14 @@
   font-size: 20rpx
 }
 .left{
-  width: 500rpx;
-  font-size: 28rpx
+  width: 70%;
+  font-size: 28rpx;
 }
 .right{
-  margin-top: 36rpx
+  width: 30%;
+  margin-top: 50rpx;
+  font-size: 36rpx;
+  font-weight: bold
 }
 .one{
   width: 90%;
@@ -102,4 +111,67 @@ swiper{
   display:-webkit-box; 
   -webkit-box-orient:vertical;
   -webkit-line-clamp:2; 
+}
+.form .huibar{
+  width: 100%;
+  height: 48rpx;
+  background: #F1F1F1;
+  border-radius: 4rpx;
+  margin-bottom: 48rpx
+
+}
+.form form{
+  font-size: 26rpx;
+ 
+}
+.inthefro{
+  width: 100%;
+ box-sizing: border-box;
+  padding: 0rpx 20rpx;
+   padding-bottom: 100rpx;
+ 
+}
+.form .left{
+  width: 46%;
+  height: 100rpx;
+  font-size: 24rpx
+}
+form input{
+  width: 100%;
+  height: 48rpx;
+  border: 1rpx solid #D7D7D7;
+  margin-top: 15rpx;
+  box-sizing: border-box;
+  padding-left: 16rpx
+}
+form .flex_be{
+  width: 100%;
+  height: 150rpx;
+}
+.form .flex_be text{
+  color: red;
+  font-size: 22rpx
+}
+form button{
+  width: 186rpx;
+  height: 54rpx;
+  font-size: 26rpx;
+  background: #0366C0;
+  text-align: center;
+  line-height: 54rpx;
+  color: #fff;
+  margin: auto;
+  margin-top: 50rpx;
+}
+button::after{
+  border: none
+}
+.typeindex{
+  width: 100%;
+  height: 48rpx;
+  border: 1rpx solid #D7D7D7;
+  margin-top: 15rpx;
+  box-sizing: border-box;
+  padding-left: 16rpx;
+  line-height: 48rpx
 }

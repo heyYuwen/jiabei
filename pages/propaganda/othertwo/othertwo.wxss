@@ -64,3 +64,136 @@ button image{
   height: 60rpx;
   margin-top: 10rpx
 }
+.cover{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background: rgba(0, 0, 0, 0.8)
+}
+.boxcenter{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 200rpx
+}
+.titleimg{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  position: relative
+}
+.titleimg image{
+  width: 100%
+}
+.titleimg .realtitle{
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 70rpx;
+  color: #fff;
+  letter-spacing: 2rpx
+}
+.money{ 
+  width: 60%;
+  height: auto;
+  position: relative;
+  margin: auto
+}
+.money image{
+  width: 100%
+}
+.realprice{
+  width:80%;
+  height: 114rpx;
+  color: #fff;
+  position: absolute;
+  top: 86rpx;
+  left: 10%;
+  font-size: 80rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 130rpx
+
+}
+.realprice text{
+  font-size: 34rpx;
+}
+.btngroups{
+  width: 90%;
+  height: 80rpx;
+  margin: auto;
+  margin-top: 200rpx;
+}
+.btngroups view{
+  width: 222rpx;
+  height: 74rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  background: #FCB452;
+  text-align: center;
+  line-height: 74rpx;
+  border-radius: 10rpx;
+  color: #333
+}
+.shares{
+  width: 100%;
+  height: 300rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  z-index: 100;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 30rpx
+}
+.shares text{
+  font-size: 30rpx
+}
+.shares .one{
+  width: 150rpx !important;
+  height: 200rpx !important;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  padding: 0rpx;
+  margin: 0rpx;
+  list-style: none;
+  background: #fff;
+  color: #222
+}
+.shares .one image{
+  width: 110rpx;
+  display: block;
+  margin: auto;
+  margin-bottom: 10rpx
+}
+button::after{
+border:none;
+}
+.cont{
+  width: 74%;
+  height: auto;
+  position: relative;
+  margin: auto;
+  margin-top: 100rpx;
+  margin-bottom: 30rpx
+}
+.save{
+  width: 74%;
+  height:70rpx;
+  border-radius: 35rpx;
+  background: #FC302F;
+  text-align: center;
+  line-height: 70rpx;
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  margin: auto
+}

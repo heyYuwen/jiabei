@@ -1,47 +1,111 @@
+<scroll-view scroll-y='true' style="height: 100%;"  scroll-into-view="{{viewid}}"  scroll-with-animation='true'>
 <view class='content'>
-  <image src="/image/allclassbanner.jpg" mode="widthFix"></image>
+  <image src="{{list.cover_url}}" mode="widthFix"></image>
   <view class="flex_be topbg">
       <view class="left" > 
-        品牌营销与运营课管理
-        <view style="margin:10rpx 0rpx">2015年8月15日~9月4日（66课时）</view>
-        <view class="bmbtn">报名</view>
+        {{list.title}}
+        <view style="margin:10rpx 0rpx">{{list.expire_time}}</view>
+        <view class="bmbtn" bindtap="tap" >报名</view>
       </view>
       <view class="right">
-       ￥ 2300
+       ￥ {{list.price}}
       </view>
   </view>
 </view>
-<view class="one">
+
+  <view class="one">
    <!-- 课程介绍 -->
    <view class="title">课程介绍</view>
-   <view class="artical">挼装色彩萨克斯马克的决赛的对比局势丢坚实的大㕢大怒啥都会玩就能发不得不IQ安徽度恶化鸡蛋呢回复都不二位我回复敦化坊底部吧吃撒U盾he㡝
-   特傻逼电视电话帅互动式年底恢复
-   </view>
+   <view class="artical">{{list.description}}</view>
    <view class="flex_sta">
       <view class="markone {{index==2||index==3?'border':'bg'}} " wx:for="{{marklist}}" wx:key='d'>{{item}}</view>
    </view>
    <!-- 学习对象 -->
     <view class="title">学习对象</view>
-   <view class="artical">挼装色彩萨克斯马克的决赛的对比局势丢坚实的大㕢大怒啥都会玩就能发不得不IQ安徽度恶化鸡蛋呢回复都不二位我回复敦化坊底部吧吃撒U盾he㡝
-   特傻逼电视电话帅互动式年底恢复
-   </view>
+   <view class="artical">{{list.study_obj}}</view>
    <!-- 课程展示 -->
-   <view class="title">课程展示</view>
-   <swiper  circular="true" class='swiper' autoplay="true" >
-     <block wx:for="{{banner}}" wx:key="banner">
+    <view class="title">课程展示</view>
+    <swiper  circular="true" class='swiper' autoplay="true" >
+     <block wx:for="{{list.show_files}}" wx:key="banner">
       <swiper-item class='swiperitem'>
-        <image src="{{item.img}}" class="{{index==bancurrentindex?'currentimg':'slideImage'}}" mode="widthFix" style="width: 100%" bindtap='test'  />
+        <image src="{{item}}" class="{{index==bancurrentindex?'currentimg':'slideImage'}}" mode="widthFix" style="width: 100%" bindtap='test'  />
         <!-- <view class='bannercontent'>{{item.title}}</view> -->
       </swiper-item>
       </block>
     </swiper>
     <!-- 课程讲师 -->
     <view class="title">课程讲师</view>
-    <view class="teacher flex_be" wx:for='{{3}}'>
-        <image src="/image/index/1 (2).jpg" ></image>
+    <view class="teacher flex_be" wx:for='{{list.lecturers}}' wx:key='s'>
+        <image src="{{item.cover_url}}" ></image>
         <view class="teacherinfo">
-           <view class="name">往上考</view>
-           <view class="info">著名室内设计师著名室内设计师著名室内设计师著名室内著名室内设计师著名室内</view>
+           <view class="name">{{item.name}}</view>
+           <view class="info">{{item.intro}}</view>
         </view>
     </view>
+    <!-- 表单 -->
+    <view class="form" >
+       <view class="title" >报名</view>
+       <view class="huibar"></view>
+       <form bindsubmit="submitform">
+          <view class="inthefro">
+              <view class="flex_be">
+                    <view class="left" id="target">
+                      姓名NAME
+                      <input type="text" name="name" value="{{name}}"></input>
+                      <text>{{nametext}}</text>
+                    </view>
+                    <view class="left">
+                      职业PROFESSION
+                      <input type="text" name="work" value="{{work}}"></input>
+                       <text>{{worktext}}</text>
+                    </view>
+              </view>
+              <view class="flex_be">
+                    <view class="left">
+                      电话PHONE
+                      <input type="number" name="phone" maxlength="11" value="{{phone}}"></input>
+                       <text>{{phonetext}}</text>
+                    </view>
+                    <view class="left">
+                      专业MAJOR
+                      <input type="text" name="major" value="{{major}}"></input>
+                       <text>{{majortext}}</text>
+                    </view>
+              </view>
+              <view class="flex_be">
+                    <view class="left">
+                      邮箱EMAIL
+                      <input type="text" name="email" value="{{email}}"></input>
+                       <text>{{emailtext}}</text>
+                    </view>
+                    <view class="left">
+                      学历EDUCATION
+                      <input type="text" name="edu" value="{{edu}}"></input>
+                       <text>{{edutext}}</text>
+                    </view>
+              </view>
+               <view class="flex_be">
+                    <view class="left">
+                      课程类别TYPE
+                      <picker bindchange="bindPickerChange" value="{{typeindex}}" range="{{typelist}}">
+                          <view class="typeindex">
+                            {{typelist[typeindex]}}
+                          </view>
+                      </picker>
+                    </view>
+                     <view class="left">
+                       课程COURSE
+                      <picker bindchange="bindlessonChange" value="{{lessonindex}}" range="{{samlllist}}">
+                          <view class="typeindex">
+                            {{samlllist[lessonindex]}}
+                          </view>
+                      </picker>
+                    </view>
+              </view>
+              <button form-type="submit" >报名</button>
+          </view>
+          
+       </form>
+    </view>
 </view>
+</scroll-view>

@@ -29,8 +29,25 @@
   display: flex;
   justify-content: flex-start
 }
+.flex_stab{
+   display: flex;
+  justify-content: flex-start;
+   flex-wrap: wrap
+}
 .flex_row{
   display: flex;
   justify-content: start;
   flex-direction: row-reverse
+}
+.nomore{
+  font-size: 24rpx;
+  color: rgb(124, 124, 124);
+  text-align: center;
+  margin: 20rpx
+}
+.empty{
+  text-align: center;
+  font-size: 26rpx;
+  margin-top: 300rpx;
+  color: #696969
 }

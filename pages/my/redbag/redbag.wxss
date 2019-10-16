@@ -1,43 +1,70 @@
 .redbag{
   width: 100%;
-  height: 320rpx;
+  height: 240rpx;
   box-shadow: 0rpx 0rpx 60rpx 10rpx rgb(245, 244, 244);
   margin-top: 40rpx;
   box-sizing: border-box;
   padding: 20rpx 60rpx
 }
-.price {
-  width: 50%;
-  font-size: 26rpx;
-  color: #696969
-}
+
 .price .redprice{
   color: red;
-  font-size: 90rpx;
-  line-height: 180rpx
+  font-size: 48rpx;
+  line-height: 180rpx;
+  width: 200rpx;
+}
+.glcolor{
+  color: rgb(209, 208, 208);
+  font-size:48rpx;
+  line-height: 180rpx;
+  width: 200rpx;
 }
 .time{
-  font-size: 30rpx;
-  width: 50%;
+  width: 270rpx;
   height: auto;
-  text-align: right;
+  text-align: left;
   color: #696969;
   position: relative;
   box-sizing: border-box;
-  padding-top: 60rpx
+  padding-top: 60rpx;
+  /* border: 1rpx rgb(180, 190, 37) solid; */
+  font-size: 22rpx
   
 
 }
-.use{
-  color: #696969;
-  width: 215rpx;
-  height: 52rpx;
-  border: 1rpx solid #438FE0;
-  box-sizing: border-box;
+.redcolor{
+  color: red;
+  font-size: 22rpx;
   text-align: center;
-  border-radius: 26rpx;
-  line-height: 52rpx;
+  margin-top: 12rpx
+}
+.glocolor{
+  color: rgb(146, 145, 145);
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 12rpx;
+}
+.use{
+  width: 100rpx;
+  height: 38rpx;
+  border-radius: 19rpx;
+  text-align: center;
+  line-height: 38rpx;
+  font-size: 24rpx;
   position: absolute;
-  right: 0px;
-  margin-top: 60rpx
+  bottom: 20rpx;
+  left: 10rpx;
+}
+.can{
+  color: #fff;
+  background: red;
+}
+.glbg{
+  background: rgb(209, 208, 208);
+  color: #696969
+}
+.right{
+  width: 120rpx;
+  height: 100%;
+  position: relative
 }

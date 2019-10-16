@@ -15,7 +15,7 @@
 }
 .youhuia{
   display: block;
-  width: 80%;
+  width: 100%;
   margin: auto;
   margin-bottom: 40rpx
 }
@@ -31,4 +31,73 @@
   margin-bottom: 30rpx
 
 
+}
+.youhuiabox{
+  width: 80%;
+  height: auto;
+  position: relative;
+  margin: auto;
+}
+.quaninfo{
+  width: 80%;
+  height: 200rpx;
+  /* border: 1rpx saddlebrown solid; */
+  position: absolute;
+  top: 0rpx;
+  left: 10%
+}
+.price{
+  width: 30%;
+  height: 200rpx;
+  line-height: 200rpx;
+  color: #FC302F;
+  font-size: 62rpx;
+  text-align: center;
+  font-weight: bold;
+  /* border: 1rpx solid red; */
+  box-sizing: border-box
+}
+.right{
+  width: 60%;
+  height: 200rpx;
+  /* border: 1rpx salmon solid; */
+  box-sizing: border-box;
+  padding: 26rpx 0rpx
+}
+.right .title{
+  font-size: 32rpx;
+  font-weight: bold
+}
+.right .use{
+  font-size: 28rpx;
+  color: #FC302F;
+  font-weight: bold
+}
+.grod{
+  font-size: 22rpx;
+  color: rgb(124, 122, 122);
+  margin: 16rpx 0rpx
+}
+.index{
+  width: 88rpx;
+  height: 88rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30rpx;
+  right: 50rpx
+}
+.index image{
+  width: 68rpx;
+  height: 68rpx;
+  display: block;
+  margin: auto
+}
+.cover{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  background: rgba(0, 0, 0, 0.8)
 }

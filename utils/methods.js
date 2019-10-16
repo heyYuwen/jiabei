@@ -7,7 +7,7 @@ export default class modals {
         content: text,
         showCancel: quxiao,
         confirmText: conText,
-        confirmColor: '#D85B3F',
+        confirmColor: '#0369D5',
         success: res => {
           resolve(res)
           confirm(res.cancel)
@@ -86,6 +86,15 @@ export default class modals {
     })
 
 
+  }
+  static islogin(){
+    console.log('token', wx.getStorageSync('token'))
+    if (!wx.getStorageSync('token')) {
+      modals.navigate("/pages/index/login/login")
+    }
+  }
+  static ifno(res){
+    wx.setStorageSync('token', res.data.header.refresh_token)
   }
 }
 function confirm(con) {

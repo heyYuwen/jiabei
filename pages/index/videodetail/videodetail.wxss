@@ -3,11 +3,14 @@ page{
 }
 video{
   width: 100%;
-  height: 460rpx
+  height: 460rpx;
 }
 cover-view{
   width: 100%;
   height: 460rpx
+}
+.lessonbg{
+  width: 100%
 }
 cover-view {
   position: relative;
@@ -20,7 +23,7 @@ cover-view {
   z-index: 1000;
   width: 300rpx;
   height: 80rpx;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(143, 141, 141, 0.4);
   border-radius: 40rpx;
   text-align: center;
   line-height: 80rpx;
@@ -36,7 +39,7 @@ cover-view {
   overflow: hidden
 }
 .title{
-  font-size: 40rpx
+  font-size: 38rpx
 }
 .nav{
   font-size: 32rpx;
@@ -68,7 +71,10 @@ cover-view {
   font-size: 32rpx;
   margin-bottom: 30rpx
 }
-
+.itemcontent text{
+  font-size: 28rpx;
+  font-weight: bold
+}
 .oneswiper image{
   width: 130rpx;
   border-radius: 50%
@@ -76,14 +82,14 @@ cover-view {
 .oneswiper .leftinfo{
   width: 500rpx;
   height: auto;
-  font-size: 28rpx;
+  font-size: 25rpx;
   letter-spacing: 2rpx;
   line-height: 40rpx
 }
 .lessoninfo{
   width: 100%;
   height: 150rpx;
-  font-size: 28rpx;
+  font-size: 25rpx;
   color: rgb(104, 101, 101);
   margin-top: 40rpx
 }
@@ -118,10 +124,10 @@ swiper-item{
 }
 .bottom .tobuy{
   width: 260rpx;
-  height: 80rpx;
+  height: 74rpx;
   background: #0369D5;
   text-align: center;
-  line-height: 80rpx;
+  line-height: 74rpx;
   font-size: 24rpx;
   color: #fff;
   border-radius: 40rpx;
@@ -161,32 +167,99 @@ swiper-item{
   margin-top: 30rpx
 }
 .username{
-  width: 90rpx;
+  width: 14%;
   border-radius: 50%;
   margin-right: 40rpx
 }
 .pinglun{
+  width: 80%;
   font-size: 28rpx
 }
-button{
+.blue{
+  background: #0369D5
+}
+.plimg{
   width: 80rpx;
-  font-size: 28rpx;
+  height: 100rpx;
+  font-size: 24rpx;
   color: #0369D5;
   margin: 0;
   padding: 0px;
-  background-color: #fff;
   position: fixed;
-  left: 80rpx;
-  bottom: 20rpx;
+  left: 200rpx;
+  bottom: 0rpx;
   line-height: 20rpx;
   box-sizing: border-box;
+  text-align: center;
 }
-button ::after {
+.plimg image{
+   width: 53rpx;
+  margin-bottom: 10rpx
+}
+.sharebtn{
+  width: 80rpx !important;
+  height: 100rpx !important;
+  font-size: 24rpx;
+  color: #0369D5;
+  margin: 0;
+  padding: 0px;
+  position: fixed;
+  left: 80rpx;
+  bottom: 0rpx;
+  line-height: 20rpx;
   box-sizing: border-box;
-   border: none!important
+  text-align: center;
+  list-style: none;
+  background: #fff;
+}
+.sharebtn image{
+  width: 50rpx;
+  margin-bottom: 10rpx
+  
+}
+button::after {
+  content:normal;
+   border: none!important;
 
   }
 .oneswiper{
   margin-top: 30rpx;
   margin-bottom: 50rpx
+}
+.bottom{
+  border-top: 1rpx solid rgb(241, 241, 241)
+}
+.teachername{
+  font-size: 26rpx;
+  margin-bottom: 12rpx
+}
+.pltext{
+  font-size: 22rpx;
+}
+.pinlunbox{
+  width: 96%;
+  height: 450rpx;
+  position: fixed;
+  bottom: 120rpx;
+  left: 2%;
+  background: #F3F3F3;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  font-size: 26rpx
+}
+.pinlunbox textarea{
+  width: 100%;
+  height: 200rpx
+}
+.submit{
+  width: 200rpx;
+  height: 60rpx;
+  background: #B8BCBF;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  float: right;
+  margin-top: 110rpx;
+  color: #fff
 }

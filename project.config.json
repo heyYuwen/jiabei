@@ -10,9 +10,10 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"checkInvalidKey": true,
-		"checkSiteMap": true,
+		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
 			"ignore": [],
@@ -21,8 +22,8 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.1",
-	"appid": "wxf052bfd9103dfb69",
+	"libVersion": "2.7.3",
+	"appid": "wxd893b86dcfa6182b",
 	"projectname": "%E5%8A%A0%E8%B4%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -52,9 +53,16 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "test",
-					"pathName": "pages/index/videodetail/videodetail",
-					"query": "",
+					"name": "pages/propaganda/otherthree/otherthree",
+					"pathName": "pages/propaganda/otherthree/otherthree",
+					"query": "parent_id :3000",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/test/code/code",
+					"pathName": "pages/test/code/code",
+					"query": "parent_id=3",
 					"scene": null
 				}
 			]

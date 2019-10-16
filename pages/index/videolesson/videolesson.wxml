@@ -1,10 +1,10 @@
 <view class="videoles flex_clbe" >
-   <view class='onelesson' wx:for="{{videoles}}" wx:key="d" data-id="{{item}}" bindtap="todetail">
-      <image src='/image/index/jiabeidongtai_icon@2x.png' mode='widthFix'></image>
-      整体软装全能班7天
+   <view class='onelesson' wx:for="{{list}}" wx:key="d" data-item="{{item.id}}" bindtap="todetail">
+      <image src='{{item.cover_url}}' mode='widthFix'></image>
       <view class='flex_be' style='margin-top:20rpx'>
-      <view class='price' style=''>￥45</view>
-      <text style='font-size:20rpx;color:#242424'>可试看</text>
+      <view class='price' style=''>￥{{item.price}}</view>
+      <text wx:if="{{item.price>0}}"  style='font-size:20rpx;color:#242424'>可试看</text>
+      <text  wx:if="{{item.price==0}}" style='font-size:20rpx;color:#242424'>免费</text>
       </view>
    </view>
 </view>

@@ -1,66 +1,55 @@
-// pages/my/redbag/redbag.js
+import modals from '../../../utils/methods.js'
+const request = require('../../../utils/https.js')
+const util = require('../../../utils/util.js')
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    page: 1,
+    nomore: false,
+    list:[]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+//  使用红包
+  touse:function(){
+    modals.switchtab('/pages/index/videolesson/videolesson')
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    let that=this
+    let url = app.globalData.api + 'api/mp/red_pack/list'
+    request.sendRequest(url, 'GET')
+      .then(function (res) {
+        util.set('token', res.header.refresh_token)
+        that.setData({
+          list: res.data.data
+        })
+      })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+  
   onReachBottom: function () {
-
+    this.fetchArticleList(this.data.page += 1)
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  fetchArticleList: function (pg) {
+    let that = this
+    if (that.data.nomore == false) {
+      let url = app.globalData.api + 'api/mp/red_pack/list?page=' + pg
+      request.sendRequest(url, 'get')
+        .then(function (res) {
+          console.log(res)
+          util.set('token', res.header.refresh_token)
+          if (res.data.data.length == 0) {
+            console.log('没有更多了')
+            that.setData({
+              nomore: true
+            })
+          } else {
+            that.setData({
+              list: that.data.list.concat(res.data.data),
+              pg: res.data.current_page
+            })
+          }
+        })
+    }
+  },
+  
 })

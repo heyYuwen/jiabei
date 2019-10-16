@@ -1,5 +1,8 @@
 import modals from '../../utils/methods.js'
-Page({
+const request = require('../../utils/https.js')
+const util = require('../../utils/util.js')
+const app = getApp()
+Page({ 
 
   /**
    * 页面的初始数据
@@ -12,43 +15,57 @@ Page({
       { img: "/image/index/1 (2).jpg", id: '1' },
       { img: "/image/index/1 (3).jpg", id: '1' },
       { img:'/image/index/ABC.jpg',id:'77'},
-    ]
+    ],
+    rules1: false,
+    rules2:false,
+    mygroup:false,      //我的团队
   },
-
-  
-  onLoad: function (options) {
-    
+  // 开团助力
+  starttuan:function(){
+    let that=this
+    util.get('token')
+    let url = app.globalData.api + 'api/mp/assistance/create'
+    request.sendRequest(url, 'post')
+      .then(function (res) {
+        util.set('token', res.header.refresh_token)
+        if (res.data.status==true){
+          let assistanceId =res.data.assistanceId
+          wx.setStorageSync('assistanceId', assistanceId)
+          modals.showToast('开团成功', "success")
+          setTimeout(function(){
+            // modals.navigate(urls, assistanceId)
+            wx.navigateTo({
+              url: '/pages/propaganda/othertwo/othertwo?assistanceId=' + assistanceId,
+            })
+          },500)
+         
+        }
+        
+      })
   },
-
-  onReady: function () {
-    
+  // 规则1
+  rules1:function(){
+    let that = this
+    that.setData({
+      rules1: true
+    })
+    setTimeout(function () {
+      that.setData({
+        rules1: false
+      })
+    }, 2500)
   },
-
- 
-  onShow: function () {
-    let that=this;
-    var array=that.data.team;
-    // for(let i=0;i++;i<array.length){
-    //   if (array[i].id)
-      
-    // }
-  },
-  tomy:function(){
-    modals.navigate("/pages/propaganda/othertwo/othertwo")
-  },
-  onHide: function () {
-    
-  },
-
-  
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  //规则2
+  rules2:function(){
+    let that=this
+    that.setData({
+      rules2: true
+    })
+    setTimeout(function(){
+      that.setData({
+        rules2:false
+      })
+    },2500)
     
   },
   // 分享
@@ -57,6 +74,7 @@ Page({
       coverwin: true
     })
   },
+  // 关闭弹窗
   closewind:function(){
    this.setData({
      coverwin:false
@@ -64,9 +82,9 @@ Page({
   },
   // 分享
   onShareAppMessage: function (res) {
-    
-    let id = wx.getStorageSync('shareId') // 分享产品的Id
-    let idarray=[1,2,3]
+    let id = wx.getStorageSync('all_info').id // 分享产品的Id
+    console.log(id, '用户的id')
+    console.log("/pages/propaganda/otherthree/otherthree?parent_id=" + id)
     let that=this
     if (res.from === 'button') {
       console.log(res.target)
@@ -75,14 +93,14 @@ Page({
        })
     }
     return {
-      title: '在吗？拜托帮我点一下！220元课程优惠券免费领',
-      imageUrl:'/image/img_fenxiang_dianji@2x.png',
-      path: "/pages/propaganda/otherone/otherone" 
+      title: '免费送你10元红包哦',
+      imageUrl:'/image/onetoone.png',
+      path: "/pages/propaganda/otherthree/otherthree?parent_id="+id
     }
    
   },
-  onGotUserInfo:function(e){
-  console.log(e)
+  onShow:function(){
+      modals.islogin()
   }
 
   

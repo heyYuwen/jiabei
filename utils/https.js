@@ -8,10 +8,16 @@ const sendRequest = function (url, method, data, header) {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${wx.getStorageSync('token')}`,
         },
-      success: resolve,
+      success: resolve, 
       fail: reject
     })
   });
   return promise;
 };
+// const really=function(key){
+//   var promise = new Promise(function (resolve, reject){
+//   })
+//   return promise;
+// }
 module.exports.sendRequest = sendRequest 
+

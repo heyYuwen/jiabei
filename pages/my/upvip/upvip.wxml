@@ -1,19 +1,10 @@
 <view class="container" >
-  <view>升级vip</view>
-  <view class="vip {{current==1?'active':''}} flex_be" bindtap="select">
-     <view class="price">￥320</view>
-     <view class="year {{current==1?'on':''}}">
-      <text>年</text> 
-      <view wx:if="{{current==1}}" class="borsj"></view>
+  <view class="title">升级VIP</view>
+   <view class="pricebox flex_clbe">
+     <view class="one" data-index="{{index}}" wx:for="{{list}}" wx:key='ps' bindtap="select">
+       <view class="price {{current==index?'on':''}}">￥{{item.price}}</view>
+       {{item.title}}
      </view>
-  </view>
-   <view style="margin-top:100rpx">升级svip</view>
-  <view class="vip {{current==2?'active':''}} flex_be" bindtap="select">
-     <view class="price">￥920</view>
-     <view class="year {{current==2?'on':''}}">
-      <text>年</text> 
-      <view wx:if="{{current==2}}" class="borsj"></view>
-     </view>
-  </view>
-  <view class="botton">确认支付{{total}}</view>
+   </view>
+  <view class="botton" bindtap="tobuy">确认支付{{total}}元</view>
 </view>

@@ -4,11 +4,17 @@
   margin: auto
 }
 .title{
-  margin-top: 100rpx
+  margin-top: 198rpx;
+  text-align: center;
+  font-size: 30rpx
+}
+.title .viptitle{
+  font-size: 30rpx;
+  font-weight: bold
 }
 .vipcenter .text{
   text-align: center;
-  font-size: 32rpx;
+  font-size: 30rpx;
   margin-top: 80rpx;
 }
 .center_box{
@@ -37,11 +43,14 @@
   margin-top: 20rpx
 }
 .list text{
-  font-size: 30rpx
+  font-size: 27rpx
 }
 .list{
   height: 60rpx;
-  line-height: 60rpx
+  line-height: 60rpx;
+  margin: auto;
+  width: 64%;
+  /* border: 1rpx saddlebrown solid */
 }
 .boxbb{
   width: 80%;
@@ -51,8 +60,15 @@
   text-align: center;
   line-height: 80rpx;
   margin: auto;
-  margin-top: 60rpx;
-  margin-bottom: 160rpx;
+  margin-top: 150rpx;
+  margin-bottom: 10rpx;
   border-radius: 40rpx;
   font-size: 30rpx
+}
+.timer{
+  font-size: 20rpx;
+  color: rgb(133, 131, 131);
+  margin: auto;
+  text-align: center;
+  margin-top: 30rpx
 }

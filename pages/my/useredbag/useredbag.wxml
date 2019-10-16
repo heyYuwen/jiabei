@@ -1,0 +1,23 @@
+<view class="redbag flex_be" wx:for="{{list}}" wx:key='a' >
+   <view class='price'>
+     <view class='redprice'>￥{{item.money}}</view>
+   </view>
+   <view class='time'>
+     <view >有效期：{{item.created_at}}至{{item.expire_time}}</view>
+    <view wx:if="{{item.source==1}}" >恭喜组队成功</view>
+     <view wx:if="{{item.source==0}}" >恭喜分享成功</view>
+   </view>
+   <view class="right" wx:if="{{item.expire_status==0}}">
+      <view class="redcolor" >即将过期 <text wx:if="{{item.status=='unuse'}}">（没有使用)</text><text wx:if="{{item.status=='used'}}">（已使用)</text></view>
+      <view data-index="{{index}}" data-item="{{item}}" bindtap="change">
+         <image src="/image/index/choosedebutton@2x.png" wx:if="{{index==current}}"></image>
+         <image src="/image/index/circle@2x.png" wx:if="{{index!=current}}"></image>
+      </view>
+      
+      
+   </view>
+   <view class="right" wx:if="{{item.expire_status==1}}">
+      <text wx:if="{{item.status=='unuse'}}">（未使用)</text><text wx:if="{{item.status=='used'}}">（已使用)</text>
+      <image class="gq" mode="widthFix" src="/image/timeover.png"></image>
+   </view>
+</view>

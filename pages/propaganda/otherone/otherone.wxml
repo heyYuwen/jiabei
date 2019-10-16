@@ -1,7 +1,19 @@
 
    <view class='win3'>
       <image class='youhui' src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
-      <image class='youhuia'  src='/image/youhui.png' mode='widthFix'></image>
+      
+       <view class="youhuiabox ">
+          <image class='youhuia'  src='/image/youhuijuan@2x.png' mode='widthFix'></image>
+          <view class="flex_be quaninfo">
+                <view class="price">￥10</view>
+                <view class="right">
+                    <view class="title">送你一张优惠券</view>
+                    <view class="grod">软装设计科免费上</view>
+                    <view class="use" bindtap="touse">立即使用</view>
+                </view>
+          </view>
+      </view>
       <view class='help' bindtap="help">帮好友助力</view>
-      <button class='help' open-type="share">我也要分享</button>
+      <view class='help'  bindtap="boxton">我也要220元红包</view>
   </view>
+  

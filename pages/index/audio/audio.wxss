@@ -1,9 +1,9 @@
 .content{
   width: 100%;
-  height: 139rpx;
+  height: auto;
   box-sizing: border-box;
-  border-bottom: 4px solid rgb(253, 253, 253);
-  padding: 20rpx 60rpx
+  box-shadow: 0rpx 0rpx 10rpx 2rpx rgb(244, 245, 247);
+  padding: 20rpx 60rpx;
 }
 .contentbox{
   width: 80%;
@@ -12,6 +12,10 @@
   font-size: 30rpx;
   line-height: 100rpx
 
+}
+.price{
+  font-size: 28rpx;
+  color: red
 }
 .contentbox image{
   width: 60rpx;
@@ -30,3 +34,57 @@
   border: 1rpx solid #0369D5;
   margin-top: 30rpx
 }
+audio{
+  width: 100%;
+  height: 5rpx;
+  display: none
+}
+.left{
+  width: 30%;
+  height: auto;
+}
+.left image{
+  width: 100%;
+  margin-top: 12rpx;
+  border-radius: 8rpx
+}
+.rightt{
+  width: 65%;
+  height: 60rpx
+}
+.free{
+  border: 1rpx solid #ccc;
+  color: #ccc;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 0rpx 3rpx
+}
+.rightt .smname{
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  margin-top: 18rpx
+}
+.rightt .flex_be image{
+  width: 46rpx;
+}
+.rightt .flex_sta{
+  font-size: 24rpx;
+  color: #ccc;
+  margin-top: 10rpx
+}
+.rightt .flex_sta image{
+  width: 14rpx;
+  margin-right: 20rpx;
+  margin-top: 6rpx
+}
+/* 那么既然小程序没有分享到朋友圈的api,我们怎么实现分享到朋友圈呢，下面我介绍一下实现思路。
+
+既然没有捷径，那就走复杂一点的路线，那就是需要用户手动分享到朋友圈，问题又来了，用户手动分享的话，分享什么呢？我们其实在朋友圈应该已经看到不少带有小程序码的图片，特别是年前与年后，应该看到不少智行火车票，携程火车票分享到朋友圈的图片，帮助好友加速，用来抢火车票，还有像今日头条，分享新闻到朋友圈的方式。
+
+他们共同的策略是生成一张带有小程序码的图片，小程序码包含了分享者的用户信息，我们把图片生成以后，用户自行保存图片到本地，然后分享到朋友圈，朋友圈好友长按图片识别图中二维码，进入小程序后解析小程序码携带的信息，生成相应的页面。这样就实现了分享到朋友圈这样一个流程。 */
+/* 那么既然小程序没有分享到朋友圈的api，我们怎么实现分享到朋友圈呢 下面我介绍一下实现思路
+
+既然没有捷径，那就走复杂一点的路线，那就是需要用户手动分享到朋友圈，问题又来了，用手动分享的话，分享什么呢？我们其实在朋友圈应该看了不少带有小程序吗的图片特别是年前 应该看到不少智行火车票 携程火车票分享到朋友圈的图片*/

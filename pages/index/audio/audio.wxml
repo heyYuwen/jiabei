@@ -1,8 +1,18 @@
-<view class="content flex_be" wx:for="{{audiolist}}" wx:key='d'>
-   <view class='contentbox flex_sta' >
-      <image src='/image/btn_play_pressd@2x.png' mode='widthFix'></image>
-      <view>{{item.name}}</view> 
-   </view>
-   <view class='right' wx:if="{{item.price==0}}">免费</view>
-   <view class='right' wx:if="{{item.price>0}}">￥{{item.price}}</view>
+<view class="content flex_be" wx:for="{{list}}" wx:key='d' data-id="{{item.id}}" bindtap="audiodetail">
+    <view class="left">
+       <image  src="{{item.cover_url}}" mode="widthFix"></image>
+    </view>
+    <view class="rightt">
+       <view class="smname">{{item.title}}</view>
+       <view class="flex_be">
+           
+           <view class="price" wx:if="{{item.price>0}}">￥{{item.price}}</view>
+           <view class="free" wx:else>免费</view>
+           <image src="/image/index/play@2x.png" mode="widthFix"></image>
+       </view>
+       <view class="flex_sta">
+           <image src="/image/index/yinpin@2x.png" mode="widthFix"></image>
+           {{item.listen_num}}人
+       </view>
+    </view>
 </view>

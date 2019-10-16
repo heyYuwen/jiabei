@@ -1,68 +1,39 @@
 import modals from '../../../utils/methods.js'
+const request = require('../../../utils/https.js')
+const app = getApp()
+var util = require('../../../utils/util.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    realvip:false,
+    time:''
   },
   up:function(){
     modals.navigate("/pages/my/upvip/upvip")
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    let that =this
+      let url = app.globalData.api + 'api/mp/members/get_info'
+      request.sendRequest(url, 'GET')
+        .then(function (res) {
+          console.log(res.data)
+          util.set('token', res.header.refresh_token)
+          if (!res.data.clubCard) {
+             console.log('没有开通会员')
+             that.setData({
+               realvip:true
+             })
+          }else{
+            that.setData({
+              realvip:false,
+              time: res.data.clubCard.expire_time
+            })
+          }
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+        })
   }
+
+ 
 })

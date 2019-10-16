@@ -1,18 +1,60 @@
-
-   <view class='win2'>
-      <view class='title'>大奖快到手啦，</view>
-      <view class='title'>就差6个新朋友神助攻咯！</view>
-      <image class='bigimg' src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
-      <view class='team flex_be'>
-            <view wx:for="{{team}}" wx:key='ws' class='only'>
-                <view class='haveuser'>
-                    <image src='{{item.img}}'></image>
-                </view>
+<view class='win2'>
+  <view class='title'>大奖快到手啦，</view>
+  <view class='title'>就差{{7-list.length}}个新朋友神助攻咯！</view>
+  <image class='bigimg' src='/image/img_fenxiang_dianji@2x.png' mode='widthFix'></image>
+  <view class='team flex_be'>
+        <view wx:for="{{list}}" wx:key='ws' class='only'>
+            <view class='haveuser'>
+                <image src='{{item.member.avatar_url}}'></image>
             </view>
-            <view wx:for="{{7-team.length}}" wx:key='gga' class='nouser'>+</view>
-      </view>
-      <button open-type='share' class="flex_ar">
-         <image src="/image/wxhy.png"></image>
-         <view>邀请好友助力 ></view>
-      </button>
+        </view>
+        <view wx:for="{{7-list.length}}" wx:key='gga' class='haveuser'><image mode="widthFix" src='/image/addicon@2x.png'></image></view>
+  </view>
+  <button   class="flex_ar" bindtap="share">
+      <image src="/image/wxhy.png"></image>
+      <view>邀请好友助力 ></view>
+  </button>
+</view>
+<!-- 组队成功 -->
+<view class="cover" wx:if="{{success}}">
+  <view class="boxcenter">
+        <view class="titleimg">
+          <image src="/image/gongxiicon@2x.png" mode="widthFix"></image>
+          <view class="realtitle">恭喜你获得220元红包</view>
+        </view>
+        <view class="money">
+             <image src="/image/hongbaoicon@2x.png" mode="widthFix"></image>
+             <view class="realprice">
+               220 <text>元</text>
+             </view>
+        </view>
+        <view class="btngroups flex_be">
+               <view>返回微信</view>
+               <view>去看看</view>
+        </view>
+  </view>
+</view>
+<!-- 分享弹窗 -->
+<view class='cover' wx:if='{{coverwin}}'></view>
+<view class='shares' wx:if='{{coverwin}}'>
+    <view class='flex_ar' >
+        <button class='one' open-type='share'>
+          <image src='/image/wx.png' mode='widthFix'></image>
+          微信好友
+        </button>
+          <button class='one' bindtap="becomeimg">
+          <image src='/image/wxq.png' mode='widthFix'></image>
+          朋友圈
+        </button> 
+    </view>
+    <text bindtap='closewind'>取消</text>
+</view>
+<!-- 二维码海报 -->
+<view class="cover" wx:if="{{sharequan}}">
+  <!-- <image src="{{codeimg}}" mode="widthFix"></image> -->
+   <view class="cont">
+      <canvas canvas-id="myCanvas" style="width:100%;height:{{screenWidth * 1.12}}px;"></canvas>
    </view>
+   <view bindtap="saveposter" class="save">保存到手机</view>
+</view>
+<!-- <image src="{{codeimg}}" style="width:250rpx;height:250rpx" ></image> -->

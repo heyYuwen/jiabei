@@ -1,10 +1,24 @@
-<view class="redbag flex_ar">
+
+<view wx:if="{{!list==''}}" >
+<view class="redbag flex_be" wx:for="{{list}}" wx:key='list'>
    <view class='price'>
-     <view class='redprice'>￥220</view>
-     成功领取220元课程抵扣券
+     <view class="{{item.expire_status==0?'redprice':'glcolor'}}">￥{{item.money}}</view>
    </view>
    <view class='time'>
-     <view class='endtime'>6月19日即将到期</view>
-     <view class='use'>去使用</view>
+     <view >有效期：{{item.created_at}}至{{item.expire_time}}</view>
+     <view wx:if="{{item.source==1}}" >恭喜组队成功</view>
+     <view wx:if="{{item.source==0}}" >恭喜分享成功</view>
    </view>
+   <view class="right">
+      <view class="glocolor" wx:if="{{item.expire_status==1}}">已过期 <text wx:if="{{item.status=='unuse'}}">(未使用)</text><text wx:if="{{item.status=='used'}}">(已使用)</text></view>
+      <view class="redcolor" wx:if="{{item.expire_status==0}}">即将过期<text wx:if="{{item.status=='unuse'}}">(未使用)</text><text wx:if="{{item.status=='used'}}">(已使用)</text></view>
+      <view  class=" use can" wx:if="{{item.expire_status==0}}"  bindtap="touse">去使用</view>
+      <!-- <view class="use glbg" wx:if="{{item.expire_status==0}}">无法使用</view> -->
+   </view>
+</view>
+<view class="nomore" wx:if="{{nomore}}">————没有更多了————</view>
+</view>
+<view wx:else  class="empty">
+   <image src="/image/empty1.png" style="width:50%;display:block;margin:auto; margin-top:120rpx" mode="widthFix"></image>
+   <view>您还没有红包呢，快去分享得红包吧</view>
 </view>

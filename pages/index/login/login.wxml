@@ -1,0 +1,8 @@
+<view class='login'>
+   <image class="baenr" src="/image/banner1.png" mode="widthFix"></image>
+   <view class="info">家贝是提供家居软装设计、培训、采购、配送安装、家居终身管家的全过程、一体化的网络平台服务</view>
+   <image class="logo" src="/image/logo.jpg" mode="widthFix"></image>
+   <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">微信快捷授权</button>
+   <view class="smalltext">授权后可观看教学视频和音频，领取优惠，红包等好礼</view>
+   <view class="smacenter">登录即表示你同意 <text>《用户服务协议》</text> </view>
+</view>

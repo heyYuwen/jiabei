@@ -1,0 +1,66 @@
+.redbag{
+  width: 100%;
+  height: 240rpx;
+  box-shadow: 0rpx 0rpx 60rpx 10rpx rgb(245, 244, 244);
+  margin-top: 40rpx;
+  box-sizing: border-box;
+  padding: 20rpx 60rpx
+}
+
+.price .redprice{
+  color: red;
+  font-size: 48rpx;
+  line-height: 180rpx;
+  width: 200rpx;
+  text-align: center
+}
+.time{
+  width: 270rpx;
+  height: auto;
+  text-align: left;
+  color: #696969;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 60rpx;
+  /* border: 1rpx rgb(180, 190, 37) solid; */
+  font-size: 22rpx
+  
+
+}
+.redcolor{
+  color: red;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 12rpx
+}
+.right image{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 52rpx;
+  left: 38rpx;
+}
+.right{
+  width: 120rpx;
+  height: 100%;
+  position: relative;
+  color: #696969;
+ 
+}
+.right text{
+   font-size: 20rpx
+}
+.redcolor{
+  color: red;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 20rpx
+}
+.right .gq{
+  width: 90rpx;
+  margin-top: 20rpx;
+  display: block;
+  margin: auto;
+  left: 14rpx;
+
+}

@@ -18,7 +18,13 @@ swiper {
   height: auto;
   border-radius: 20rpx
 }
-
+.slideImage{
+  width: 100%;
+  height: 370rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 7px;
+}
 .bannercontent{
   position: absolute;
   top: 0rpx;
@@ -35,7 +41,7 @@ swiper {
   width: 100%;
   height: 180rpx;
   margin-top: 40rpx;
-  color: #015ED2;
+  color: #277FDB;
   box-shadow: 0rpx 0rpx 20rpx 10rpx rgb(248, 246, 246);
   margin: 30rpx 0rpx 60rpx 0rpx;
   box-sizing: border-box;
@@ -83,8 +89,8 @@ swiper {
   height: 32rpx;
   line-height: 32rpx;
   text-align: center;
-  background: #015ED2;
-  color: #ffff
+  background: #0253AB;
+  color: #ffffff
 }
 .mustnews .flex_be{
   font-size: 22rpx;
@@ -106,13 +112,18 @@ swiper {
   margin-top: 26rpx
  
 }
-.textright text{
-  font-size: 30rpx;
+.textright .text{
+  font-size: 29rpx;
   font-weight: bold;
-  margin-bottom: 20rpx
+  margin-bottom: 20rpx;
+ overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp:2;  /* 设置行数 */
+	-webkit-box-orient: vertical;
 }
 .itemcontent{
-   font-size: 28rpx;
+   font-size: 25rpx;
    margin-top: 30rpx;
    overflow: hidden;
   text-overflow:ellipsis;

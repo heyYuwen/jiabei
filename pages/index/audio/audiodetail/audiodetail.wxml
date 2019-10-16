@@ -1,0 +1,64 @@
+<view class="banner">
+    <view class="lessontitle">{{audiodetail.title}}</view>
+    <image class="poster {{played==true?'addyuan':''}}" src="{{audiodetail.cover_url}}" mode="widthFix"></image>
+    <!-- 进度条 -->
+    <view class="progress " wx:if="{{phonetype!='ios'}}">
+          <slider block-size='20' bindchange="sliderChange" block-size="12px" min="0" max='1000' step="1" value="{{sliderjindu}}" activeColor="#fff" backgroundColor='#95897E' bindchanging="changing" disabled="{{!audiodetail.buyed}}"></slider>
+          <audio  src="{{src}}" id="myAudio"   show-progress bindtimeupdate="toProgress" bindended='audioend' ></audio>
+    </view>
+    <!-- 时间，播放，评论 -->
+    <view class="flex_be play" wx:if="{{phonetype!='ios'}}">
+        <view class="one">{{nowtime}}/{{alltime}}</view>
+        <view class="one two">
+            <image wx:if="{{!played}}" src="/image/index/plaa@2x1.png"  bindtap="play"></image>
+            <image wx:if="{{played}}" src="/image/index/posed@2x.png"  bindtap="play"></image>
+        </view>
+        <view class="one three"><image src="/image/index/pinglun@2x.png" mode="widthFix" bindtap="tapbox" ></image></view>
+    </view>
+</view>
+<view class="container">
+   <view class="infotitle">简介:</view>
+   <view class="infomation">{{audiodetail.intro}}</view>
+   <view class="infotitle">讲师介绍:</view>
+   <view class="flex_sta" style="margin-bottom:30rpx">
+       <image class="teacherimg" src="{{audiodetail.lecturer.cover_url}}" mode="widthFix"></image>
+       <view class="teachername">
+               {{audiodetail.lecturer.name}}     
+               <view class="teachermate">{{audiodetail.lecturer.intro}}</view> 
+       </view>
+   </view>
+    <view class="infotitle">音频标签:</view>
+    <view class="flex_stab" >
+        <view class="markbot" wx:for="{{audiodetail.tags}}" wx:key='cont'>{{item.name}}</view>
+
+    </view>
+    <view class="infotitle" style="margin-top:50rpx">评论:</view>
+    <view class="flex_sta" style="margin-top:30rpx" wx:for="{{audiodetail.discusses}}" wx:key='sa'>
+        <image class="disgussimg" mode="widthFix" src="{{item.member.avatar_url}}"></image>
+        <view class="disright">
+            <view class="disgussname">{{item.member.nick_name}}</view>
+            <view class="discontent">{{item.content}}</view>
+        </view>
+    </view>
+</view>
+<view class="wintop" wx:if="{{wintop}}">
+  <form bindsubmit="send">
+    <image class='closeimg' bindtap="close" src="/image/close.png"></image>
+    <textarea name='content' placeholder="留下你的评论" maxlength="80"></textarea>
+    <button class="btn" form-type="submit">发送</button>
+  </form>
+</view>
+<view class='bottom'>
+  <button open-type="share" class="sharebtn">
+     <image src='/image/fenxiang_btn@2x.png' mode='widthFix'></image>
+     <view>分享</view> 
+  </button>
+  <view class="plimg" wx:if="{{navactive==2}}" bindtap="pinlun">
+      <image src="/image/pinglun@2x.png" mode="widthFix"></image>
+      <view>评论</view>
+  </view>
+  <view class='tobuy' bindtap="buy"  wx:if="{{phonetype!='ios'}}">立刻购买</view>
+</view>
+<view class="nobuy">
+   
+</view>

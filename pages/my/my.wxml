@@ -1,11 +1,10 @@
 <view class="usertop flex_sta">
-  <image src='/image/index/ABC.jpg' mode='widthFix'></image>
+  <image src='{{info.avatarUrl}}' mode='widthFix'></image>
   <view class='username'>
-     <view>柿子</view>
-     <view style='margin-top:10rpx'>ID2356</view>
+     <view>{{username}}</view>
   </view>
 </view>
-<view class='onebar flex_be' style='border:4px solid #fdfbfb' bindtap="myorder">
+<view class='onebar flex_be' style='border:4px solid #fdfbfb' bindtap="myorder" wx:if="{{phonetype!='ios'}}">
    <text>我的订单</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
 </view>
@@ -13,19 +12,23 @@
    <text>个人信息</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
 </view>
-<view class='onebar flex_be' bindtap="vipcenter">
+<view class='onebar flex_be' bindtap="vipcenter" wx:if="{{phonetype!='ios'}}">
    <text>会员中心</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
 </view>
-<view class='onebar flex_be' bindtap="jifen">
+<!-- <view class='onebar flex_be' bindtap="jifen">
    <text>我的积分</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
-</view>
+</view> -->
 <view class='onebar flex_be' bindtap='myredpag'>
    <text>红包</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
 </view>
-<view class='onebar flex_be' bindtap='mychangecode'>
-   <text>兑换码</text>
+<view class='onebar flex_be' bindtap='pint'>
+   <text>我的组队</text>
    <image src='/image/index/more.png' mode='widthFix'></image>
 </view>
+<!-- <view class='onebar flex_be' bindtap='mychangecode'>
+   <text>兑换码</text>
+   <image src='/image/index/more.png' mode='widthFix'></image>
+</view> -->
